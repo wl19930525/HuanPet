@@ -12,4 +12,5 @@ import java.util.Map;
 
 public interface ModelInf {
     <T>void Login(String string, Map<String,String> map, CallBackListener<T> callBackListener);
+
 }

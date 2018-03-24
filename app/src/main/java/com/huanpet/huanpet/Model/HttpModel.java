@@ -18,4 +18,5 @@ public class HttpModel implements ModelInf{
         HttpUntils.getInstance().post(string,map,callBackListener);
 
     }
+
 }
