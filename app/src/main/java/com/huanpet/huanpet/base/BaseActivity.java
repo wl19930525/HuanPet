@@ -22,7 +22,7 @@ import com.huanpet.huanpet.R;
  * on 2018/3/5.
  * at 北京
  */
-
+//
 
 public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener {
     private FrameLayout mContentLayout;
