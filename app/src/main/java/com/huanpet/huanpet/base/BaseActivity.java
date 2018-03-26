@@ -9,8 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -29,6 +31,9 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
     private TextView text_title;
     private RelativeLayout layout_titlebar;
     private TextView regist;
+    private ImageView personal;
+    private ImageView Orientate;
+    private RelativeLayout image_search;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -45,6 +50,10 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         regist = findViewById(R.id.button_regist);
         layout_titlebar = (RelativeLayout) findViewById(R.id.layout_titlebar);
         mContentLayout = (FrameLayout) findViewById(R.id.layout_content);
+        personal = findViewById(R.id.image_personal);
+        Orientate = findViewById(R.id.image_orientate);
+
+        image_search = findViewById(R.id.search);
     }
     protected abstract int initgetId();
 
@@ -88,15 +97,42 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
             }
         }
     }
+    protected void setPersinal(boolean show) {
+        if (personal != null) {
+            if (show) {
 
+                personal.setVisibility(View.VISIBLE);
+            } else {
+                personal.setVisibility(View.GONE);
+            }
+        }
+    }
+    protected void setOrientate(boolean show) {
+        if (Orientate != null) {
+            if (show) {
 
+                Orientate.setVisibility(View.VISIBLE);
+            } else {
+                Orientate.setVisibility(View.GONE);
+            }
+        }
+    }
+    protected void setSearchImage(boolean show) {
+        if (image_search != null) {
+            if (show) {
 
+                image_search.setVisibility(View.VISIBLE);
+            } else {
+                image_search.setVisibility(View.GONE);
+            }
+        }
+    }
 
-
-
-
-
-
+    //设置标题内容
+    @Override
+    public void setTitle(int titleId) {
+        text_title.setText(titleId);
+    }
 
     //设置标题内容
     @Override
@@ -116,7 +152,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
 
 
     //取出FrameLayout并调用父类removeAllViews()方法
-    /*@Override
+    @Override
     public void setContentView(int layoutResID) {
         mContentLayout.removeAllViews();
         View.inflate(this, layoutResID, mContentLayout);
@@ -130,14 +166,13 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         onContentChanged();
     }
 
-    *//* (non-Javadoc)
+    /* (non-Javadoc)
      * @see android.app.Activity#setContentView(android.view.View, android.view.ViewGroup.LayoutParams)
-     *//*
+     */
     @Override
     public void setContentView(View view, ViewGroup.LayoutParams params) {
         mContentLayout.removeAllViews();
         mContentLayout.addView(view, params);
         onContentChanged();
     }
-*/
 }

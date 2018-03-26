@@ -138,7 +138,7 @@ public class YindaoyeActivity extends AppCompatActivity implements View.OnClickL
                 edit.putBoolean("flag", true);
                 edit.commit();
 
-                Intent intent = new Intent(YindaoyeActivity.this,LoginActivity.class);
+                Intent intent = new Intent(YindaoyeActivity.this,MainActivity.class);
                 startActivity(intent);
                 finish();
                 break;
@@ -146,7 +146,7 @@ public class YindaoyeActivity extends AppCompatActivity implements View.OnClickL
     }
     public void enterDeal() {
 // 点击跳转
-        Intent intent = new Intent(YindaoyeActivity.this,LoginActivity.class);
+        Intent intent = new Intent(YindaoyeActivity.this,MainActivity.class);
         startActivity(intent);
         finish();
     }
