@@ -44,6 +44,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         setContentView(initgetId());
         initView();
         initData();
+//        fjdlfkg
     }
     private void setupViews() {
         super.setContentView(R.layout.baseativity);
