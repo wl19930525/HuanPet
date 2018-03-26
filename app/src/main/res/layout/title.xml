@@ -35,14 +35,14 @@
         android:layout_height="52dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
+        android:layout_below="@+id/image_personal"
         android:drawablePadding="6dp"
-        android:textColor="#ffffff"
         android:gravity="center"
         android:onClick="onClick"
         android:paddingLeft="5dp"
         android:singleLine="true"
         android:text="注册"
+        android:textColor="#ffffff"
         android:textSize="18dp"
         android:visibility="visible" />
 

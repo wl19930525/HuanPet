@@ -22,11 +22,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".view.activity.LoginActivity" />
         <activity android:name=".view.activity.YindaoyeActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name="com.umeng.qq.tencent.AuthActivity"
@@ -52,7 +48,15 @@
             android:value="561cae6ae0f55abd990035bf" />
 
         <activity android:name=".view.activity.RegistActivity" />
-        <activity android:name=".view.activity.MainActivity"></activity>
+        <activity android:name=".view.activity.MainActivity" />
+        <activity android:name=".view.activity.MobileActivity" />
+        <activity android:name=".view.activity.PetTypeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
