@@ -25,6 +25,7 @@ import com.huanpet.huanpet.R;
  * at 北京
  */
 
+
 public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener {
     private FrameLayout mContentLayout;
     private ImageView img;
