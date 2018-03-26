@@ -23,10 +23,10 @@
         android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
         android:backgroundTint="#ffffff"
-        android:background="@mipmap/return_back"
+        android:background="@mipmap/back_gray"
         android:paddingLeft="5dp"
         android:singleLine="true"
-        android:visibility="visible" />
+        android:visibility="gone" />
 
 
     <TextView
@@ -46,60 +46,6 @@
         android:textSize="18dp"
         android:visibility="visible" />
 
-    <ImageView
-        android:id="@+id/image_personal"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="15dp"
-        android:layout_marginStart="15dp"
-        app:srcCompat="@mipmap/my"
-        android:visibility="gone"/>
-
-    <ImageView
-        android:id="@+id/image_orientate"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_alignLeft="@+id/button_regist"
-        android:layout_alignStart="@+id/button_regist"
-        android:layout_centerVertical="true"
-        app:srcCompat="@mipmap/map"
-        android:visibility="gone"/>
-
-    <RelativeLayout
-        android:id="@+id/search"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:background="@drawable/text_view_border"
-        android:orientation="horizontal"
-        android:visibility="visible">
-
-        <ImageView
-
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
-            app:srcCompat="@mipmap/search" />
-
-        <EditText
-            android:layout_width="200dp"
-            android:layout_height="30dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="28dp"
-            android:layout_marginStart="28dp"
-            android:background="@null"
-            android:hint="请输入地址名" />
-
-
-    </RelativeLayout>
 
 
 

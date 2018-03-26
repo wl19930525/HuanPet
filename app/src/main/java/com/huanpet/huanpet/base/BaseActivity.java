@@ -50,10 +50,6 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         regist = findViewById(R.id.button_regist);
         layout_titlebar = (RelativeLayout) findViewById(R.id.layout_titlebar);
         mContentLayout = (FrameLayout) findViewById(R.id.layout_content);
-        personal = findViewById(R.id.image_personal);
-        Orientate = findViewById(R.id.image_orientate);
-
-        image_search = findViewById(R.id.search);
     }
     protected abstract int initgetId();
 
@@ -94,26 +90,6 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
                 regist.setVisibility(View.VISIBLE);
             } else {
                 regist.setVisibility(View.GONE);
-            }
-        }
-    }
-    protected void setPersinal(boolean show) {
-        if (personal != null) {
-            if (show) {
-
-                personal.setVisibility(View.VISIBLE);
-            } else {
-                personal.setVisibility(View.GONE);
-            }
-        }
-    }
-    protected void setOrientate(boolean show) {
-        if (Orientate != null) {
-            if (show) {
-
-                Orientate.setVisibility(View.VISIBLE);
-            } else {
-                Orientate.setVisibility(View.GONE);
             }
         }
     }
