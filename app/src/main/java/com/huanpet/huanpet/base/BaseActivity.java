@@ -17,8 +17,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.huanpet.huanpet.R;
-
-
 /**
  * Created by 执笔画商
  * on 2018/3/5.
