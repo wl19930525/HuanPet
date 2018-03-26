@@ -26,6 +26,7 @@ import com.huanpet.huanpet.R;
 
 
 
+
 public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener {
     private FrameLayout mContentLayout;
     private ImageView img;
