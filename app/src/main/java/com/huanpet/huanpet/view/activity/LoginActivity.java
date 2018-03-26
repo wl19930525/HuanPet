@@ -1,9 +1,7 @@
 package com.huanpet.huanpet.view.activity;
 
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 
 import com.huanpet.huanpet.R;
 import com.huanpet.huanpet.base.BaseActivity;
@@ -41,8 +39,4 @@ public class LoginActivity extends BaseActivity{
 
     }
 
-    @Override
-    public void onClick(View v) {
-
-    }
 }

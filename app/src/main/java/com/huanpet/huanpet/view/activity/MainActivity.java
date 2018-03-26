@@ -1,7 +1,5 @@
 package com.huanpet.huanpet.view.activity;
 
-import android.view.View;
-
 import com.huanpet.huanpet.R;
 import com.huanpet.huanpet.base.BaseActivity;
 
@@ -33,8 +31,4 @@ public class MainActivity extends BaseActivity {
 
     }
 
-    @Override
-    public void onClick(View v) {
-
-    }
 }
