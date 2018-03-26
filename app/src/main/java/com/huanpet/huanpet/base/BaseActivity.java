@@ -55,6 +55,7 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         mContentLayout = (FrameLayout) findViewById(R.id.layout_content);
         personal = findViewById(R.id.image_personal);
         Orientate = findViewById(R.id.image_orientate);
+//                                    https://github.com/wl19930525/HuanPet.git
 
         image_search = findViewById(R.id.search);
     }
