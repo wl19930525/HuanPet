@@ -13,11 +13,12 @@ import android.view.ViewGroup;
 
 public abstract class BaseFragment extends Fragment{
 
+    public View AllVIEW;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View AllVIEW = inflater.inflate(getFragmentLayoutID(),null);
+        AllVIEW = inflater.inflate(getFragmentLayoutID(),null);
         initView();
         initData();
         initInfo();
