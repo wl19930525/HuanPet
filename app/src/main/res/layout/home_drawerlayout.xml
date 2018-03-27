@@ -7,17 +7,19 @@
 <RelativeLayout
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
+
     <ImageView
         android:id="@+id/image_personal"
         android:layout_width="30dp"
         android:layout_height="30dp"
+
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-
-        android:layout_marginLeft="15dp"
-        android:layout_marginStart="15dp"
-        app:srcCompat="@mipmap/my"
-        android:visibility="visible"/>
+        android:layout_alignTop="@+id/imageView"
+        android:layout_marginLeft="17dp"
+        android:layout_marginStart="17dp"
+        android:visibility="visible"
+        app:srcCompat="@mipmap/my" />
 
     <ImageView
         android:id="@+id/image_orientate"
@@ -25,40 +27,44 @@
         android:layout_height="30dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/editText"
         android:visibility="visible"
         app:srcCompat="@mipmap/map" />
+
     <RelativeLayout
         android:id="@+id/search"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
 
+        android:layout_alignTop="@+id/editText"
+        android:layout_centerHorizontal="true"
         android:background="@drawable/text_view_border"
         android:orientation="horizontal"
         android:visibility="visible">
 
-        <ImageView
-
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
-            app:srcCompat="@mipmap/search" />
-
-        <EditText
-            android:layout_width="200dp"
-            android:layout_height="30dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="28dp"
-            android:layout_marginStart="28dp"
-            android:background="@null"
-            android:hint="请输入地址名" />
-
 
     </RelativeLayout>
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:layout_alignTop="@+id/imageView"
+        android:layout_toEndOf="@+id/imageView"
+        android:layout_toRightOf="@+id/imageView"
+        android:background="@null"
+        android:hint="请输入地址名"
+        android:id="@+id/editText" />
+
+    <ImageView
+
+        android:id="@+id/imageView"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignLeft="@+id/search"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/search"
+        android:layout_marginTop="13dp"
+        app:srcCompat="@mipmap/search" />
 </RelativeLayout>
 
 
@@ -72,6 +78,7 @@
         android:orientation="vertical">
 
         <LinearLayout
+            android:id="@+id/head_portrait_linear"
             android:layout_width="match_parent"
             android:layout_height="150dp"
             android:orientation="horizontal"
@@ -85,6 +92,7 @@
                 android:src="@mipmap/ic_launcher"
                 android:layout_gravity="center"/>
             <LinearLayout
+                android:layout_marginLeft="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -106,6 +114,7 @@
 
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/information_linear"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -127,6 +136,7 @@
             </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/pet_linear"
             android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -149,6 +159,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/orderfrom_linear"
             android:layout_marginTop="40dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -170,6 +181,7 @@
                 android:layout_gravity="center" />
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/Need_to_know"
             android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -191,6 +203,7 @@
                 android:layout_gravity="center" />
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/set_linear"
             android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

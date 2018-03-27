@@ -9,20 +9,6 @@ import com.huanpet.huanpet.base.BaseActivity;
 
 public class RegistActivity extends BaseActivity {
 
-    private EditText edi_phonenumber;
-    private EditText edi_Verificationcode;
-    private EditText edi_username;
-    private EditText edi_password;
-
-    private Button btn_Verificationcode;
-    private Button btn_regist;
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_regist);
-    }
 
     @Override
     protected int initgetId() {
@@ -36,7 +22,8 @@ public class RegistActivity extends BaseActivity {
 
     @Override
     protected void initView() {
-
+        settextcencel(true);
+        setTextlogin(true);
     }
 
     @Override

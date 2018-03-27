@@ -12,10 +12,10 @@
         android:text="热门宠物"
         android:textColor="#C3C3C4"
         android:textSize="17sp" />
-    <com.zsy.words.view.WordsNavigation
+ <!--   <com.zsy.words.view.WordsNavigation
         android:id="@+id/words"
         android:layout_width="30dp"
         android:layout_height="match_parent"
-        android:layout_alignParentRight="true" />
+        android:layout_alignParentRight="true" />-->
 
 </RelativeLayout>

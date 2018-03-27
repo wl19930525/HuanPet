@@ -1,52 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/layout_titlebar"
     android:layout_width="match_parent"
     android:layout_height="65dp">
+
+
     <TextView
-        android:id="@+id/text_title"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:ellipsize="marquee"
-        android:gravity="center_horizontal|center"
-        android:singleLine="true"
-        android:textColor="#ffffffff"
-        android:textSize="30dp" />
-
-    <ImageView
-
-        android:id="@+id/imageview_comeback"
+        android:id="@+id/text_cencel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_centerVertical="true"
-        android:backgroundTint="#ffffff"
-        android:background="@mipmap/back_gray"
-        android:paddingLeft="5dp"
-        android:singleLine="true"
-        android:visibility="gone" />
-
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="13dp"
+        android:visibility="gone"
+        android:textColor="#ea9a0f"
+        android:text="取消" />
 
     <TextView
-        android:id="@+id/button_regist"
-        android:layout_width="50dp"
-        android:layout_height="52dp"
+        android:id="@+id/text_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/text_cencel"
+        android:layout_alignBottom="@+id/text_cencel"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/image_personal"
-        android:drawablePadding="6dp"
-        android:gravity="center"
-        android:onClick="onClick"
-        android:paddingLeft="5dp"
-        android:singleLine="true"
-        android:text="注册"
-        android:textColor="#ffffff"
-        android:textSize="18dp"
-        android:visibility="visible" />
-
-
-
-
+        android:layout_marginEnd="14dp"
+        android:layout_marginRight="14dp"
+        android:textColor="#ea9a0f"
+        android:visibility="gone"
+        android:text="登录" />
 </RelativeLayout>
+
