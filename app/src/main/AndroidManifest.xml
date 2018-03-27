@@ -20,7 +20,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.activity.LoginActivity" />
+        <activity android:name=".view.activity.loginregist.LoginActivity" />
         <activity android:name=".view.activity.YindaoyeActivity"></activity>
         <activity
             android:name="com.umeng.qq.tencent.AuthActivity"
@@ -45,11 +45,10 @@
             android:name="UMENG_APPKEY"
             android:value="561cae6ae0f55abd990035bf" />
 
-        <activity android:name=".view.activity.RegistActivity" />
-        <activity android:name=".view.activity.MainActivity" />
+        <activity android:name=".view.activity.loginregist.RegistActivity" />
         <activity android:name=".view.activity.PersonalActivity" />
 
-        <activity android:name=".view.activity.Add_PetsActivity"></activity>
+        <activity android:name=".view.activity.pet.Add_PetsActivity"></activity>
 =======
         <activity android:name=".view.activity.MainActivity" >
             <intent-filter>
@@ -59,10 +58,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".view.activity.MobileActivity" />
-        <activity android:name=".view.activity.PetTypeActivity">
+        <activity android:name=".view.activity.pet.PetTypeActivity">
 
         </activity>
-        <activity android:name=".view.activity.ImmuneConditionActivity">
+        <activity android:name=".view.activity.pet.ImmuneConditionActivity">
 
         </activity>
     </application>

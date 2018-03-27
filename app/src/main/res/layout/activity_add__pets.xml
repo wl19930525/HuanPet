@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#F0F1F5"
     android:orientation="vertical"
-    tools:context="com.huanpet.huanpet.view.activity.Add_PetsActivity">
+    tools:context="com.huanpet.huanpet.view.activity.pet.Add_PetsActivity">
 
     <RelativeLayout
         android:id="@+id/pet_head_layout"

@@ -1,4 +1,4 @@
-package com.huanpet.huanpet.view.activity;
+package com.huanpet.huanpet.view.activity.loginregist;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -52,7 +52,7 @@ public class RegistActivity extends BaseActivity {
     TextView textView7;
     @BindView(R.id.textView5)
     TextView textView5;
-    String url = "http://123.56.150.230:8885/dog_family/http://user/register.jhtml";
+    String url = "http://123.56.150.230:8885/user/register.jhtml";
     @Override
     protected int initgetId() {
         return R.layout.activity_regist;

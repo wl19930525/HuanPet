@@ -10,14 +10,5 @@
     <include layout="@layout/home_drawerlayout"/>
 
 
-
-    <TextView
-        android:id="@+id/mtext"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="dasdasdasd"/>
-
-</android.support.constraint.ConstraintLayout>
-=======
 </RelativeLayout>
 

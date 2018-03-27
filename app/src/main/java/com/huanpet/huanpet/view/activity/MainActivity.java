@@ -1,33 +1,21 @@
 package com.huanpet.huanpet.view.activity;
-
 import android.content.Intent;
-
 import android.view.View;
-=======
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.huanpet.huanpet.R;
+import com.huanpet.huanpet.view.activity.loginregist.LoginActivity;
+import com.huanpet.huanpet.view.activity.pet.Add_PetsActivity;
 
-import org.w3c.dom.Text;
-
-public class MainActivity extends BaseActivity {
-
-    private TextView mtext;
-
-    @Override
-    protected int initgetId() {
-        return R.layout.activity_main;
-    }
-=======
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mDrawerToggle;
@@ -38,7 +26,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView Home_Image;
     private TextView Deawer_name;
     private TextView Deawer_nuber;
-    private LinearLayout head_portrait_linear;
+    private RelativeLayout head_portrait_linear;
     private LinearLayout information_linear;
     private LinearLayout pet_linear;
     private LinearLayout orderfrom_linear;
@@ -55,26 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initView();
         initCeMenu();
 
-
-
-    @Override
-    protected void initView() {
-        setPersinal(true);
-        setOrientate(true);
-        setSearchImage(true);
-        mtext = findViewById(R.id.mtext);
-
-        mtext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent  in = new Intent(MainActivity.this,Add_PetsActivity.class);
-                startActivity(in);
-            }
-        });
-
-=======
     }
-
     private void initView() {
         Home_Image = (ImageView) findViewById(R.id.Home_Image);
         Home_Image.setOnClickListener(this);
@@ -82,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Deawer_name.setOnClickListener(this);
         Deawer_nuber = (TextView) findViewById(R.id.Deawer_nuber);
         Deawer_nuber.setOnClickListener(this);
-        head_portrait_linear = (LinearLayout) findViewById(R.id.head_portrait_linear);
+        head_portrait_linear =  findViewById(R.id.head_portrait_linear);
         head_portrait_linear.setOnClickListener(this);
         information_linear = (LinearLayout) findViewById(R.id.information_linear);
         information_linear.setOnClickListener(this);
@@ -139,6 +108,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.information_linear:
                 break;
             case R.id.pet_linear:
+                Intent intent1 = new Intent(MainActivity.this,Add_PetsActivity.class);
+                startActivity(intent1);
+
                 break;
             case R.id.orderfrom_linear:
                 break;

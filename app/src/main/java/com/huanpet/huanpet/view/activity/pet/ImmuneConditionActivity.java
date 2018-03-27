@@ -1,4 +1,4 @@
-package com.huanpet.huanpet.view.activity;
+package com.huanpet.huanpet.view.activity.pet;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;

@@ -1,4 +1,4 @@
-package com.huanpet.huanpet.view.activity;
+package com.huanpet.huanpet.view.activity.pet;
 
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
