@@ -47,10 +47,14 @@
 
         <activity android:name=".view.activity.RegistActivity" />
         <activity android:name=".view.activity.MainActivity" />
+
+        <activity android:name=".view.activity.SelectCityActivity" />
+        <activity android:name=".view.activity.SelectVityActivity"></activity>
+
         <activity android:name=".view.activity.PersonalActivity" />
 
         <activity android:name=".view.activity.Add_PetsActivity"></activity>
-=======
+
         <activity android:name=".view.activity.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -65,6 +69,7 @@
         <activity android:name=".view.activity.ImmuneConditionActivity">
 
         </activity>
+
     </application>
 
 </manifest>

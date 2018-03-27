@@ -10,14 +10,17 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.huanpet.huanpet.R;
-
-
 /**
  * Created by 执笔画商
  * on 2018/3/5.
  * at 北京
  */
 
+
+
+
+
+public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener {
 public abstract class BaseActivity extends AppCompatActivity {
     private FrameLayout mContentLayout;
     private RelativeLayout layout_titlebar;
@@ -32,6 +35,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         setContentView(initgetId());
         initView();
         initData();
+//        fjdlfkgdfdetgersssssssss
     }
 
     private void setupViews() {
