@@ -1,6 +1,9 @@
 package com.huanpet.huanpet.view.activity;
 
 import android.content.Intent;
+
+import android.view.View;
+=======
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.DrawerLayout;
@@ -9,10 +12,22 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+
 import android.widget.TextView;
 
 import com.huanpet.huanpet.R;
 
+import org.w3c.dom.Text;
+
+public class MainActivity extends BaseActivity {
+
+    private TextView mtext;
+
+    @Override
+    protected int initgetId() {
+        return R.layout.activity_main;
+    }
+=======
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mDrawerToggle;
@@ -31,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private LinearLayout set_linear;
     private DrawerLayout dl_left;
 
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +56,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initCeMenu();
 
 
+
+    @Override
+    protected void initView() {
+        setPersinal(true);
+        setOrientate(true);
+        setSearchImage(true);
+        mtext = findViewById(R.id.mtext);
+
+        mtext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent  in = new Intent(MainActivity.this,Add_PetsActivity.class);
+                startActivity(in);
+            }
+        });
+
+=======
     }
 
     private void initView() {
