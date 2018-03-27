@@ -15,8 +15,13 @@ public class HttpModel implements ModelInf{
 
     @Override
     public <T> void Login(String string, Map<String,String> map, CallBackListener<T> callBackListener) {
-        HttpUntils.getInstance().post(string,map,callBackListener);
 
     }
+
+    @Override
+    public <T> void Regist(String string, Map<String, String> hendmap, Map<String, String> bodymap, CallBackListener<T> callBackListener) {
+        HttpUntils.getInstance().post(string,hendmap,bodymap,callBackListener);
+    }
+
 
 }

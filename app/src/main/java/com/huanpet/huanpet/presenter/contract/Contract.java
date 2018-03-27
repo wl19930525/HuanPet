@@ -14,6 +14,6 @@ public interface Contract {
         <T>void UpdataUi(T t);
     }
     public interface PresenterInf{
-        void doSumshing(String url, Map<String,String> map);
+        void doSumshing(String url, Map<String,String> hendmap, Map<String,String> bodymap);
     }
 }

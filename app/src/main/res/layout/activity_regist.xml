@@ -32,7 +32,7 @@
     <Button
         android:id="@+id/btnRegist_VerificationCode"
         android:layout_width="100dp"
-        android:layout_height="wrap_content"
+        android:layout_height="20dp"
         android:layout_alignBottom="@+id/editRegist_phonenumber"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"

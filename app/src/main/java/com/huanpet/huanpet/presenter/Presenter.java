@@ -23,21 +23,24 @@ public class Presenter implements Contract.PresenterInf{
     public Presenter(Contract.ViewInf viewInf) {
         this.viewInf = viewInf;
         this.modelInf = new HttpModel();
+
+
+
+
     }
 
     @Override
-    public void doSumshing(String url, Map<String,String> map) {
-        modelInf.Login(url, map, new CallBackListener<Object>() {
+    public void doSumshing(String url, Map<String, String> hendmap, Map<String, String> bodymap) {
+        modelInf.Regist(url, hendmap, bodymap, new CallBackListener<String>() {
             @Override
             public void Error(String string) {
 
             }
 
             @Override
-            public void Success(Object o) {
-                viewInf.UpdataUi(o);
+            public void Success(String s) {
+                viewInf.UpdataUi(s);
             }
         });
-
     }
 }

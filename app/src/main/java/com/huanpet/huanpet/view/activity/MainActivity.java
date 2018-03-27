@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.huanpet.huanpet.R;
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView Home_Image;
     private TextView Deawer_name;
     private TextView Deawer_nuber;
-    private LinearLayout head_portrait_linear;
+    private RelativeLayout head_portrait_linear;
     private LinearLayout information_linear;
     private LinearLayout pet_linear;
     private LinearLayout orderfrom_linear;
@@ -49,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Deawer_name.setOnClickListener(this);
         Deawer_nuber = (TextView) findViewById(R.id.Deawer_nuber);
         Deawer_nuber.setOnClickListener(this);
-        head_portrait_linear = (LinearLayout) findViewById(R.id.head_portrait_linear);
+        head_portrait_linear = findViewById(R.id.head_portrait_linear);
         head_portrait_linear.setOnClickListener(this);
         information_linear = (LinearLayout) findViewById(R.id.information_linear);
         information_linear.setOnClickListener(this);
@@ -96,6 +97,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.image_personal:
+                initCeMenu();
                 break;
             case R.id.image_orientate:
                 break;
@@ -104,6 +106,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
             case R.id.information_linear:
+
+
                 break;
             case R.id.pet_linear:
                 break;

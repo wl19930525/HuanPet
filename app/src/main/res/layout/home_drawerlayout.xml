@@ -74,10 +74,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="#fff"
+        android:background="#ffffff"
         android:orientation="vertical">
 
-        <LinearLayout
+        <RelativeLayout
             android:id="@+id/head_portrait_linear"
             android:layout_width="match_parent"
             android:layout_height="150dp"
@@ -88,32 +88,58 @@
                 android:id="@+id/Home_Image"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_centerInParent="true"
-                android:src="@mipmap/ic_launcher"
-                android:layout_gravity="center"/>
-            <LinearLayout
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+
+                android:src="@mipmap/ic_launcher" />
+            <RelativeLayout
                 android:layout_marginLeft="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_gravity="center">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="姓名"
-                    android:layout_gravity="center"
-                    android:id="@+id/Deawer_name"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="编号"
-                    android:layout_gravity="center"
-                    android:id="@+id/Deawer_nuber"/>
-            </LinearLayout>
+            </RelativeLayout>
 
-        </LinearLayout>
+
+            <TextView
+                android:id="@+id/Deawer_nuber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/Home_Image"
+                android:layout_gravity="center"
+                android:layout_marginBottom="13dp"
+                android:layout_marginLeft="22dp"
+                android:layout_marginStart="22dp"
+                android:layout_toEndOf="@+id/Home_Image"
+                android:layout_toRightOf="@+id/Home_Image"
+                android:text="编号" />
+
+            <TextView
+                android:id="@+id/Deawer_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/Deawer_nuber"
+                android:layout_alignStart="@+id/Deawer_nuber"
+                android:layout_alignTop="@+id/Home_Image"
+                android:layout_gravity="center"
+                android:layout_marginTop="12dp"
+                android:text="姓名" />
+
+            <ImageView
+                android:id="@+id/image_go"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                app:srcCompat="@mipmap/img_go" />
+
+        </RelativeLayout>
         <LinearLayout
+            android:layout_marginTop="10dp"
             android:id="@+id/information_linear"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -224,5 +250,14 @@
                 android:textSize="20sp"
                 android:layout_gravity="center" />
         </LinearLayout>
+
+        <Button
+            android:id="@+id/button_application"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="申请成为寄养家庭"
+            android:background="#edeaea"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center"/>
     </LinearLayout>
 </android.support.v4.widget.DrawerLayout>

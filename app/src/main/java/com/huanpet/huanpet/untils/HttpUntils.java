@@ -93,6 +93,7 @@ public class HttpUntils implements IoHttp{
 
                 Gson gson = new Gson();
 
+
                 Type[] tt =   callback.getClass().getGenericInterfaces();
 
                 Type[] tp =   ((ParameterizedType)tt[0]).getActualTypeArguments();
