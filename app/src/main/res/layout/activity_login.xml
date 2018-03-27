@@ -5,12 +5,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/login_bg"
-    android:fitsSystemWindows="true"
     tools:context="com.huanpet.huanpet.view.activity.LoginActivity">
 
-    <include
-        android:id="@+id/include"
-        layout="@layout/title" />
+    <ImageView
+
+        android:id="@+id/imageview_comeback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:backgroundTint="#ffffff"
+        android:background="@mipmap/back_gray"
+        android:paddingLeft="5dp"
+        android:singleLine="true"
+        android:visibility="visible" />
+
+
+    <TextView
+        android:id="@+id/button_regist"
+        android:layout_width="50dp"
+        android:layout_height="52dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:drawablePadding="6dp"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:text="注册"
+        android:paddingLeft="5dp"
+        android:singleLine="true"
+        android:textSize="18dp"
+        android:visibility="visible" />
 
 
     <EditText
@@ -21,7 +45,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/textView"
-        android:layout_marginTop="39dp"
+        android:layout_marginTop="30dp"
         android:hint="请输入账号/手机号"
         android:textColorHint="#969492" />
 
@@ -33,7 +57,6 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/Username"
-        android:layout_marginTop="15dp"
         android:hint="请输入密码"
         android:textColorHint="#969492" />
 
@@ -41,8 +64,9 @@
         android:id="@+id/textView"
         android:layout_width="200dp"
         android:layout_height="30dp"
-        android:layout_below="@+id/include"
+        android:layout_below="@+id/button_regist"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="17dp"
         android:text="欢迎你加入宠物寄养"
         android:textColor="#969492"
         android:textSize="20dp" />
@@ -50,11 +74,11 @@
     <Button
         android:id="@+id/button_login"
         android:layout_width="340dp"
-        android:background="@drawable/buttonyuanjiao"
         android:layout_height="wrap_content"
         android:layout_below="@+id/Password"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="34dp"
+        android:layout_marginTop="27dp"
+        android:background="@drawable/buttonyuanjiao"
         android:text="登录" />
 
     <TextView
@@ -79,31 +103,22 @@
         android:id="@+id/frameLayout">
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textColor="#969492"
-            android:text="使用第三方账号登录"/>
-
-
-
     </FrameLayout>
 
     <ImageView
         android:id="@+id/image_QQ"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_alignLeft="@+id/textView"
         android:layout_alignStart="@+id/textView"
         android:layout_below="@+id/frameLayout"
-        android:layout_marginTop="11dp"
+        android:layout_marginTop="25dp"
         app:srcCompat="@mipmap/login_qq" />
 
     <ImageView
         android:id="@+id/image_Weixin"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_alignEnd="@+id/textView"
         android:layout_alignRight="@+id/textView"
         android:layout_alignTop="@+id/image_QQ"
@@ -116,24 +131,30 @@
         android:layout_alignLeft="@+id/image_QQ"
         android:layout_alignStart="@+id/image_QQ"
         android:layout_below="@+id/image_QQ"
-        android:layout_marginLeft="11dp"
-        android:layout_marginStart="11dp"
         android:text="手机QQ"
         android:textColor="#ffffff"
         android:textSize="13sp" />
 
     <TextView
         android:id="@+id/textView3"
-        android:textSize="13sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/image_Weixin"
-        android:layout_alignStart="@+id/image_Weixin"
         android:layout_below="@+id/image_Weixin"
-        android:layout_marginLeft="20dp"
-        android:layout_marginStart="20dp"
+        android:layout_toEndOf="@+id/textView6"
+        android:layout_toRightOf="@+id/textView6"
         android:text="微信"
-        android:textColor="#ffffff" />
+        android:textColor="#ffffff"
+        android:textSize="13sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/image_QQ"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:text="使用第三方账号登录"
+        android:textColor="#969492"
+        android:id="@+id/textView6" />
 
 
 </RelativeLayout>

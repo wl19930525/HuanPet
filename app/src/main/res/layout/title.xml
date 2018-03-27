@@ -1,106 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/layout_titlebar"
     android:layout_width="match_parent"
     android:layout_height="65dp">
+
+
     <TextView
-        android:id="@+id/text_title"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:ellipsize="marquee"
-        android:gravity="center_horizontal|center"
-        android:singleLine="true"
-        android:textColor="#ffffffff"
-        android:textSize="30dp" />
-
-    <ImageView
-
-        android:id="@+id/imageview_comeback"
+        android:id="@+id/text_cencel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_centerVertical="true"
-        android:backgroundTint="#ffffff"
-        android:background="@mipmap/return_back"
-        android:paddingLeft="5dp"
-        android:singleLine="true"
-        android:visibility="visible" />
-
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="13dp"
+        android:visibility="gone"
+        android:textColor="#ea9a0f"
+        android:text="取消" />
 
     <TextView
-        android:id="@+id/button_regist"
-        android:layout_width="50dp"
-        android:layout_height="52dp"
+        android:id="@+id/text_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/text_cencel"
+        android:layout_alignBottom="@+id/text_cencel"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:drawablePadding="6dp"
-        android:textColor="#ffffff"
-        android:gravity="center"
-        android:onClick="onClick"
-        android:paddingLeft="5dp"
-        android:singleLine="true"
-        android:text="注册"
-        android:textSize="18dp"
-        android:visibility="visible" />
-
-    <ImageView
-        android:id="@+id/image_personal"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="15dp"
-        android:layout_marginStart="15dp"
-        app:srcCompat="@mipmap/my"
-        android:visibility="gone"/>
-
-    <ImageView
-        android:id="@+id/image_orientate"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_alignLeft="@+id/button_regist"
-        android:layout_alignStart="@+id/button_regist"
-        android:layout_centerVertical="true"
-        app:srcCompat="@mipmap/map"
-        android:visibility="gone"/>
-
-    <RelativeLayout
-        android:id="@+id/search"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:background="@drawable/text_view_border"
-        android:orientation="horizontal"
-        android:visibility="visible">
-
-        <ImageView
-
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
-            app:srcCompat="@mipmap/search" />
-
-        <EditText
-            android:layout_width="200dp"
-            android:layout_height="30dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="28dp"
-            android:layout_marginStart="28dp"
-            android:background="@null"
-            android:hint="请输入地址名" />
-
-
-    </RelativeLayout>
-
-
-
+        android:layout_marginEnd="14dp"
+        android:layout_marginRight="14dp"
+        android:textColor="#ea9a0f"
+        android:visibility="gone"
+        android:text="登录" />
 </RelativeLayout>
+

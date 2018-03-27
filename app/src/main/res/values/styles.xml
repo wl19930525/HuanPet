@@ -7,6 +7,7 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+
     <style name="MenuTabText">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
@@ -15,5 +16,9 @@
         <item name="android:drawablePadding">15dp</item>
         <item name="android:padding">15dp</item>
         <item name="android:textSize">22sp</item>
+
+    <style name="MyEditText" parent="Theme.AppCompat.Light">
+        <item name="colorControlNormal">#c5c5c5</item>
+
     </style>
 </resources>

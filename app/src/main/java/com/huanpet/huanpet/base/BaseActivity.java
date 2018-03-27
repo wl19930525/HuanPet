@@ -1,18 +1,11 @@
 package com.huanpet.huanpet.base;
 
-import android.app.Dialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -28,14 +21,12 @@ import com.huanpet.huanpet.R;
 
 
 public abstract class BaseActivity extends AppCompatActivity implements View.OnClickListener {
+public abstract class BaseActivity extends AppCompatActivity {
     private FrameLayout mContentLayout;
-    private ImageView img;
-    private TextView text_title;
     private RelativeLayout layout_titlebar;
-    private TextView regist;
-    private ImageView personal;
-    private ImageView Orientate;
-    private RelativeLayout image_search;
+    private TextView text_cencel;
+    private TextView text_login;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -46,18 +37,15 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         initData();
 //        fjdlfkgdfdetgersssssssss
     }
+
     private void setupViews() {
         super.setContentView(R.layout.baseativity);
-        img = (ImageView) findViewById(R.id.imageview_comeback);
-        text_title = (TextView) findViewById(R.id.text_title);
-        regist = findViewById(R.id.button_regist);
         layout_titlebar = (RelativeLayout) findViewById(R.id.layout_titlebar);
         mContentLayout = (FrameLayout) findViewById(R.id.layout_content);
-        personal = findViewById(R.id.image_personal);
-        Orientate = findViewById(R.id.image_orientate);
-
-        image_search = findViewById(R.id.search);
+        text_cencel = findViewById(R.id.text_cencel);
+        text_login = findViewById(R.id.text_login);
     }
+
     protected abstract int initgetId();
 
     protected abstract void initData();
@@ -70,84 +58,55 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
 
 
 
-    protected void setComeBackImage(boolean show) {
-        if (img != null) {
+
+    protected void settextcencel(boolean show) {
+        if (text_cencel != null) {
             if (show) {
-                img.setVisibility(View.VISIBLE);
+
+                text_cencel.setVisibility(View.VISIBLE);
             } else {
-                img.setVisibility(View.GONE);
+                text_cencel.setVisibility(View.GONE);
+            }
+        }
+    }
+    protected void setTextlogin(boolean show) {
+        if (text_login != null) {
+            if (show) {
+
+                text_login.setVisibility(View.VISIBLE);
+            } else {
+                text_login.setVisibility(View.GONE);
+            }
+        }
+    }
+    protected void setlinearBase(boolean show) {
+        if (layout_titlebar != null) {
+            if (show) {
+
+                layout_titlebar.setVisibility(View.VISIBLE);
+            } else {
+                layout_titlebar.setVisibility(View.GONE);
             }
         }
     }
 
-    protected void setTitleText(boolean show) {
-        if (text_title != null) {
-            if (show) {
-
-                text_title.setVisibility(View.VISIBLE);
-            } else {
-                text_title.setVisibility(View.GONE);
-            }
-        }
-    }
-    protected void setregistButton(boolean show) {
-        if (regist != null) {
-            if (show) {
-
-                regist.setVisibility(View.VISIBLE);
-            } else {
-                regist.setVisibility(View.GONE);
-            }
-        }
-    }
-    protected void setPersinal(boolean show) {
-        if (personal != null) {
-            if (show) {
-
-                personal.setVisibility(View.VISIBLE);
-            } else {
-                personal.setVisibility(View.GONE);
-            }
-        }
-    }
-    protected void setOrientate(boolean show) {
-        if (Orientate != null) {
-            if (show) {
-
-                Orientate.setVisibility(View.VISIBLE);
-            } else {
-                Orientate.setVisibility(View.GONE);
-            }
-        }
-    }
-    protected void setSearchImage(boolean show) {
-        if (image_search != null) {
-            if (show) {
-
-                image_search.setVisibility(View.VISIBLE);
-            } else {
-                image_search.setVisibility(View.GONE);
-            }
-        }
-    }
-
-    //设置标题内容
+    /*//设置标题内容
     @Override
     public void setTitle(int titleId) {
-        text_title.setText(titleId);
+        regist.setText(titleId);
     }
 
     //设置标题内容
     @Override
     public void setTitle(CharSequence title) {
-        text_title.setText(title);
+        regist.setText(title);
     }
 
     //设置标题文字颜色
     @Override
     public void setTitleColor(int textColor) {
-        text_title.setTextColor(textColor);
-    }
+        regist.setTextColor(textColor);
+    }*/
 
     public void setBarColor(int textColor) {
         layout_titlebar.setBackgroundResource(textColor);
@@ -178,4 +137,6 @@ public abstract class BaseActivity extends AppCompatActivity implements View.OnC
         mContentLayout.addView(view, params);
         onContentChanged();
     }
+
+
 }
