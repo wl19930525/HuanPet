@@ -1,16 +1,275 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
+    android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.huanpet.huanpet.view.activity.MainActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="75px">
+    <LinearLayout
+        android:id="@+id/near_linear"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="75px">
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/neartext_main"
+    android:text="附近优先"
+    android:textSize="20sp"
+    />
+     <ImageView
+         android:layout_width="30px"
+         android:layout_height="30px"
+         android:src="@drawable/down_arrow"
+         android:layout_marginLeft="10dp"
+         android:layout_marginTop="5px"
+         android:id="@+id/nearimage_main"
+         android:layout_gravity="center_vertical"/>
+</LinearLayout>
+    <LinearLayout
+        android:id="@+id/pet_linear"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="75px"
+        android:layout_gravity="center_horizontal"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/pwttext_main"
+            android:text="宠物类型"
+            android:textSize="20sp"
+            />
+        <ImageView
+            android:layout_width="30px"
+            android:layout_height="30px"
+            android:src="@drawable/down_arrow"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/petimage_main"
+            android:layout_gravity="center_vertical"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/screen_linear"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="75px">
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/screentext_main"
+            android:text="筛选"
+            android:paddingLeft="30dp"
+            android:textSize="20sp"
+            />
+        <ImageView
+            android:layout_width="30px"
+            android:layout_height="30px"
+            android:src="@drawable/down_arrow"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/screenimage_main"
+            android:layout_gravity="center_vertical"/>
+    </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linear_main"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+    </LinearLayout>
+    <FrameLayout
+        android:id="@+id/nearpet_frame"
+        android:visibility="gone"
+        android:background="#7f7f7f"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:id="@+id/nearpet_popu"></android.support.v7.widget.RecyclerView>
+    </FrameLayout>
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="dasdasdasd"/>
+    <FrameLayout
+        android:id="@+id/screen_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"
+                android:text="所在地" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="100dp"
+                android:id="@+id/selectcity_text_main"
+                android:text="选择其他城市" />
+
+            <ImageView
+                android:id="@+id/choice"
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/enter" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/location"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:background="#f0e50b"
+            android:text="北京"></Button>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:text="其他服务" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/shower"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:text="洗澡" />
+
+            <Button
+                android:id="@+id/shuttle"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:text="接/送" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="节假日筛选" />
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/egg"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:text="元旦可接单" />
+
+            <Button
+                android:id="@+id/spring"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:text="春节可接单" />
+
+            <Button
+                android:id="@+id/qingming"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:text="清明可接单" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/labour"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:text="劳动可接单" />
+
+            <Button
+                android:id="@+id/dragonBoat"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="30dp"
+                android:text="端午可接单" />
+
+            <Button
+                android:id="@+id/mid_autumn"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="30dp"
+                android:text="中秋可接单" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/national"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"
+                android:text="国庆可接单" />
+
+            <Button
+                android:id="@+id/reset"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="150dp"
+                android:text="重置" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/determine"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="确定"
+            android:background="#f2d40e"
+            />
+    </LinearLayout>
+    </FrameLayout>
+</LinearLayout>
