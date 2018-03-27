@@ -46,17 +46,19 @@
             android:value="561cae6ae0f55abd990035bf" />
 
         <activity android:name=".view.activity.RegistActivity" />
-        <activity android:name=".view.activity.MainActivity" />
-        <activity android:name=".view.activity.MobileActivity" />
-        <activity android:name=".view.activity.PetTypeActivity">
-
-        </activity>
-        <activity android:name=".view.activity.ImmuneConditionActivity">
+        <activity android:name=".view.activity.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".view.activity.MobileActivity" />
+        <activity android:name=".view.activity.PetTypeActivity">
+
+        </activity>
+        <activity android:name=".view.activity.ImmuneConditionActivity">
+
         </activity>
     </application>
 
