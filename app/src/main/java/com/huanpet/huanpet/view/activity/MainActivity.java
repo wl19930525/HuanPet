@@ -1,6 +1,9 @@
 package com.huanpet.huanpet.view.activity;
 
 import android.content.Intent;
+
+import android.view.View;
+=======
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.DrawerLayout;
@@ -9,11 +12,22 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
+
 import android.widget.TextView;
 
 import com.huanpet.huanpet.R;
 
+import org.w3c.dom.Text;
+
+public class MainActivity extends BaseActivity {
+
+    private TextView mtext;
+
+    @Override
+    protected int initgetId() {
+        return R.layout.activity_main;
+    }
+=======
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mDrawerToggle;
@@ -24,13 +38,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView Home_Image;
     private TextView Deawer_name;
     private TextView Deawer_nuber;
-    private RelativeLayout head_portrait_linear;
+    private LinearLayout head_portrait_linear;
     private LinearLayout information_linear;
     private LinearLayout pet_linear;
     private LinearLayout orderfrom_linear;
     private LinearLayout Need_to_know;
     private LinearLayout set_linear;
     private DrawerLayout dl_left;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -41,6 +56,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initCeMenu();
 
 
+
+    @Override
+    protected void initView() {
+        setPersinal(true);
+        setOrientate(true);
+        setSearchImage(true);
+        mtext = findViewById(R.id.mtext);
+
+        mtext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent  in = new Intent(MainActivity.this,Add_PetsActivity.class);
+                startActivity(in);
+            }
+        });
+
+=======
     }
 
     private void initView() {
@@ -50,7 +82,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Deawer_name.setOnClickListener(this);
         Deawer_nuber = (TextView) findViewById(R.id.Deawer_nuber);
         Deawer_nuber.setOnClickListener(this);
-        head_portrait_linear = findViewById(R.id.head_portrait_linear);
+        head_portrait_linear = (LinearLayout) findViewById(R.id.head_portrait_linear);
         head_portrait_linear.setOnClickListener(this);
         information_linear = (LinearLayout) findViewById(R.id.information_linear);
         information_linear.setOnClickListener(this);
@@ -97,7 +129,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.image_personal:
-                initCeMenu();
                 break;
             case R.id.image_orientate:
                 break;
@@ -106,8 +137,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
             case R.id.information_linear:
-
-
                 break;
             case R.id.pet_linear:
                 break;
