@@ -53,7 +53,8 @@
 
         <activity android:name=".view.activity.RegistActivity" />
         <activity android:name=".view.activity.MainActivity" />
-        <activity android:name=".view.activity.SelectCityActivity"></activity>
+        <activity android:name=".view.activity.SelectCityActivity" />
+        <activity android:name=".view.activity.SelectVityActivity"></activity>
     </application>
 
 </manifest>
