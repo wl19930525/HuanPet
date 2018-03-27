@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/HuanPet.iml" filepath="$PROJECT_DIR$/HuanPet.iml" />
+      <module fileurl="file://D:\AndroidProject\HuanPet\HuanPet3.iml" filepath="D:\AndroidProject\HuanPet\HuanPet3.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

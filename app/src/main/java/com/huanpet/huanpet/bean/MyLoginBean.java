@@ -6,7 +6,7 @@ import org.greenrobot.greendao.annotation.Generated;
 
 /**
  * Created by 执笔画商
- * on 2018/3/23.
+ * on 2018/3/23.‘
  * at 北京
  */
 @Entity
