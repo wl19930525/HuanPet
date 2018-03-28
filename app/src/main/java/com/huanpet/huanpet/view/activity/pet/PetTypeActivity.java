@@ -2,9 +2,12 @@ package com.huanpet.huanpet.view.activity.pet;
 
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.SearchView;
+import android.widget.TextView;
 
 import com.huanpet.huanpet.R;
 import com.huanpet.huanpet.base.BaseActivity;
@@ -27,6 +30,7 @@ public class PetTypeActivity extends BaseActivity implements RadioGroup.OnChecke
     private DogFragment dogFragment;
     private SmallpetFragment smallpetFragment;
 
+
     @Override
     protected int initgetId() {
         return R.layout.activity_pet_type;
@@ -46,6 +50,7 @@ public class PetTypeActivity extends BaseActivity implements RadioGroup.OnChecke
     protected void initView() {
         radioGroup = findViewById(R.id.rdogroup_petType);
         frameLayout =findViewById(R.id.frameLayout_petType);
+
         manager = getSupportFragmentManager();
         radioGroup.setOnCheckedChangeListener(this);
     }
@@ -60,8 +65,10 @@ public class PetTypeActivity extends BaseActivity implements RadioGroup.OnChecke
 
     }
 
+
+
     @Override
-    public void onCheckedChanged(RadioGroup radioGroup, int i) {
+    public void onCheckedChanged(RadioGroup group, int i) {
         switch (i) {
             case R.id.rdobtn_first:
                 if (manager == null){

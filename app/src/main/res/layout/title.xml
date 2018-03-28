@@ -2,8 +2,9 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/layout_titlebar"
+    android:gravity="center_vertical"
     android:layout_width="match_parent"
-    android:layout_height="65dp">
+    android:layout_height="40dp">
 
 
     <TextView
@@ -33,5 +34,41 @@
         android:textColor="#ea9a0f"
         android:visibility="gone"
         android:text="登录" />
+
+    <TextView
+        android:id="@+id/text_confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/text_title"
+        android:layout_alignBottom="@+id/text_title"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="15dp"
+        android:layout_marginRight="15dp"
+        android:text="确定"
+        android:textSize="18sp"
+        android:textColor="#545351"
+        android:visibility="gone" />
+    <ImageView
+
+        android:id="@+id/image_comeback"
+        android:layout_width="30dp"
+        android:layout_height="25dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@mipmap/back_gray"
+        android:paddingLeft="5dp"
+        android:singleLine="true"
+        android:visibility="gone" />
+    <TextView
+        android:id="@+id/text_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_below="@+id/text_cencel"
+        android:layout_centerHorizontal="true"
+        android:text="城市筛选"
+        android:textSize="20dp"
+        android:textColor="#545351" />
 </RelativeLayout>
 

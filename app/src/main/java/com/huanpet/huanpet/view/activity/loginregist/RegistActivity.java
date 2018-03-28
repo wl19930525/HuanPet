@@ -1,7 +1,9 @@
 package com.huanpet.huanpet.view.activity.loginregist;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -11,6 +13,7 @@ import com.huanpet.huanpet.R;
 import com.huanpet.huanpet.base.BaseActivity;
 import com.huanpet.huanpet.untils.CallBackListener;
 import com.huanpet.huanpet.untils.HttpUntils;
+import com.huanpet.huanpet.untils.Md5Encrypt;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -25,7 +28,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class RegistActivity extends BaseActivity {
+public class RegistActivity extends BaseActivity implements View.OnClickListener{
 
 
     @BindView(R.id.textView4)
@@ -52,7 +55,10 @@ public class RegistActivity extends BaseActivity {
     TextView textView7;
     @BindView(R.id.textView5)
     TextView textView5;
-    String url = "http://123.56.150.230:8885/user/register.jhtml";
+    String url = "http://123.56.150.230:8885/dog_family/user/register.jhtml";
+    private TextView text_cencel;
+    private TextView text_login;
+
     @Override
     protected int initgetId() {
         return R.layout.activity_regist;
@@ -67,20 +73,14 @@ public class RegistActivity extends BaseActivity {
         headmap.put("token","1DF094171F873B8DF64F9AABCE3D82BC");
         headmap.put("channel","android");
 
-        bodymap.put("userPhone","17611030319");
+        bodymap.put("aaa","17611030319");
         bodymap.put("userName","wl19930525");
-        bodymap.put("password","wl123456");
+        bodymap.put("password", Md5Encrypt.md5("ww12345678", "UTF-8"));
 
         OkHttpClient okHttpClient = new OkHttpClient();
         FormBody.Builder body = new FormBody.Builder();
-        for (String str: bodymap.keySet()
-             ) {
-            body.add(str,bodymap.get(str));
-        }
+        body.add("uuu","\"{\"+\"\"header\":{\"sign\"+\"EE2DCEEBB1EF53EBEF46A92B2BA91B7D\",\"ip\":\"172.16.45.18\",\"token\":\"EE2DCEEBB1EF53EBEF46A92B2BA91B7D\",\"channel\":\"android\"},\"body\":{\"userPhone\":\"17611030319\",\"userName\":\"wanglei\",\"password\":\"wl12345678\"\"");
         Request.Builder post = new Request.Builder().url(url).post(body.build());
-        for(String str : headmap.keySet()){
-            post.addHeader(str,headmap.get(str));
-        }
         Request request = post.build();
         okHttpClient.newCall(request).enqueue(new Callback() {
             @Override
@@ -102,6 +102,10 @@ public class RegistActivity extends BaseActivity {
     protected void initView() {
         settextcencel(true);
         setTextlogin(true);
+        text_cencel = findViewById(R.id.text_cencel);
+        text_cencel.setOnClickListener(this);
+        text_login = findViewById(R.id.text_login);
+        text_login.setOnClickListener(this);
     }
 
     @Override
@@ -114,4 +118,17 @@ public class RegistActivity extends BaseActivity {
 
     }
 
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.text_cencel:
+                finish();
+                break;
+            case R.id.text_login:
+                Intent intent = new Intent(this,LoginActivity.class);
+                startActivity(intent);
+                break;
+        }
+    }
 }
