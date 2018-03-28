@@ -1,90 +1,86 @@
 package com.huanpet.huanpet.view.activity;
 
 
-
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.huanpet.huanpet.R;
-import com.huanpet.huanpet.base.BaseActivity;
+import com.huanpet.huanpet.screen.ScreenActivity;
+import com.huanpet.huanpet.untils.Md5Encrypt;
+import com.huanpet.huanpet.view.activity.loginregist.LoginActivity;
 import com.huanpet.huanpet.view.adapter.MyNearPetAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends BaseActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    private ImageView image_personal;
+    private ImageView image_orientate;
+    private LinearLayout search;
+    private EditText editText;
+    private ImageView imageView;
     private TextView neartext_main;
     private ImageView nearimage_main;
     private LinearLayout near_linear;
     private TextView pwttext_main;
     private ImageView petimage_main;
-    private LinearLayout pet_linear;
+    private LinearLayout pet_linear2;
     private TextView screentext_main;
     private ImageView screenimage_main;
     private LinearLayout screen_linear;
     private LinearLayout linear_main;
     private RecyclerView nearpet_popu;
     private FrameLayout nearpet_frame;
-    private Boolean isBool = true;
-    private List<String> userList1 = new ArrayList<>();
-    private List<String> userList2 = new ArrayList<>();
+    private TextView selectcity_text_main;
+    private ImageView choice;
+    private Button location;
+    private Button shower;
+    private Button shuttle;
+    private Button egg;
+    private Button spring;
+    private Button qingming;
+    private Button labour;
+    private Button dragonBoat;
+    private Button mid_autumn;
+    private Button national;
+    private Button reset;
+    private Button determine;
     private FrameLayout screen_main;
-    private TextView selectcity_text;
-
-=======
-import android.content.Intent;
-
-import android.view.View;
-=======
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-
-import android.widget.TextView;
-
-import com.huanpet.huanpet.R;
-
-import org.w3c.dom.Text;
-
-public class MainActivity extends BaseActivity {
-
-    private TextView mtext;
-
-
-    @Override
-    protected int initgetId() {
-        return R.layout.activity_main;
-    }
-
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private DrawerLayout mDrawerLayout;
-    private ActionBarDrawerToggle mDrawerToggle;
-
-    private ImageView mImage;
-    private ImageView image_personal;
-    private ImageView image_orientate;
     private ImageView Home_Image;
-    private TextView Deawer_name;
     private TextView Deawer_nuber;
-    private LinearLayout head_portrait_linear;
+    private TextView Deawer_name;
+    private ImageView image_go;
+    private RelativeLayout head_portrait_linear;
     private LinearLayout information_linear;
     private LinearLayout pet_linear;
     private LinearLayout orderfrom_linear;
     private LinearLayout Need_to_know;
     private LinearLayout set_linear;
+    private Button button_application;
     private DrawerLayout dl_left;
+    private ImageView mImage;
+    private ActionBarDrawerToggle mDrawerToggle;
+    private DrawerLayout mDrawerLayout;
+    private Boolean isBool = true;
+    private List<String> userList1 = new ArrayList<>();
+    private List<String> userList2 = new ArrayList<>();
 
 
     @Override
@@ -94,54 +90,83 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initDrawerLayout();
         initView();
         initCeMenu();
-
-
-
-    @Override
-    protected void initView() {
-        setPersinal(true);
-        setOrientate(true);
-        setSearchImage(true);
-        neartext_main = findViewById(R.id.neartext_main);
-        pwttext_main = findViewById(R.id.pwttext_main);
-        screentext_main = findViewById(R.id.screentext_main);
-        screenimage_main = findViewById(R.id.screenimage_main);
-        petimage_main = findViewById(R.id.petimage_main);
-        nearimage_main = findViewById(R.id.nearimage_main);
-        screen_linear = findViewById(R.id.screen_linear);
-        screen_linear.setOnClickListener(this);
-        pet_linear = findViewById(R.id.pet_linear);
-        pet_linear.setOnClickListener(this);
-        near_linear = findViewById(R.id.near_linear);
-        near_linear.setOnClickListener(this);
-        nearpet_popu = findViewById(R.id.nearpet_popu);
-        linear_main = findViewById(R.id.linear_main);
-        nearpet_frame = findViewById(R.id.nearpet_frame);
-        screen_main=findViewById(R.id.screen_main);
-        selectcity_text = findViewById(R.id.selectcity_text_main);
-        selectcity_text.setOnClickListener(this);
-
-        mtext = findViewById(R.id.mtext);
-
-        mtext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent  in = new Intent(MainActivity.this,Add_PetsActivity.class);
-                startActivity(in);
-            }
-        });
-
-
     }
 
     private void initView() {
+
+        image_personal = (ImageView) findViewById(R.id.image_personal);
+        image_personal.setOnClickListener(this);
+        image_orientate = (ImageView) findViewById(R.id.image_orientate);
+        image_orientate.setOnClickListener(this);
+        search =findViewById(R.id.search);
+        search.setOnClickListener(this);
+        editText = (EditText) findViewById(R.id.editText);
+        editText.setOnClickListener(this);
+        imageView = (ImageView) findViewById(R.id.imageView);
+        imageView.setOnClickListener(this);
+        neartext_main = (TextView) findViewById(R.id.neartext_main);
+        neartext_main.setOnClickListener(this);
+        nearimage_main = (ImageView) findViewById(R.id.nearimage_main);
+        nearimage_main.setOnClickListener(this);
+        near_linear = (LinearLayout) findViewById(R.id.near_linear);
+        near_linear.setOnClickListener(this);
+        pwttext_main = (TextView) findViewById(R.id.pwttext_main);
+        pwttext_main.setOnClickListener(this);
+        petimage_main = (ImageView) findViewById(R.id.petimage_main);
+        petimage_main.setOnClickListener(this);
+        pet_linear2 = (LinearLayout) findViewById(R.id.pet_linear2);
+        pet_linear2.setOnClickListener(this);
+        screentext_main = (TextView) findViewById(R.id.screentext_main);
+        screentext_main.setOnClickListener(this);
+        screenimage_main = (ImageView) findViewById(R.id.screenimage_main);
+        screenimage_main.setOnClickListener(this);
+        screen_linear = (LinearLayout) findViewById(R.id.screen_linear);
+        screen_linear.setOnClickListener(this);
+        linear_main = (LinearLayout) findViewById(R.id.linear_main);
+        linear_main.setOnClickListener(this);
+        nearpet_popu = (RecyclerView) findViewById(R.id.nearpet_popu);
+        nearpet_popu.setOnClickListener(this);
+        nearpet_frame = (FrameLayout) findViewById(R.id.nearpet_frame);
+        nearpet_frame.setOnClickListener(this);
+        selectcity_text_main = (TextView) findViewById(R.id.selectcity_text_main);
+        selectcity_text_main.setOnClickListener(this);
+        choice = (ImageView) findViewById(R.id.choice);
+        choice.setOnClickListener(this);
+        location = (Button) findViewById(R.id.location);
+        location.setOnClickListener(this);
+        shower = (Button) findViewById(R.id.shower);
+        shower.setOnClickListener(this);
+        shuttle = (Button) findViewById(R.id.shuttle);
+        shuttle.setOnClickListener(this);
+        egg = (Button) findViewById(R.id.egg);
+        egg.setOnClickListener(this);
+        spring = (Button) findViewById(R.id.spring);
+        spring.setOnClickListener(this);
+        qingming = (Button) findViewById(R.id.qingming);
+        qingming.setOnClickListener(this);
+        labour = (Button) findViewById(R.id.labour);
+        labour.setOnClickListener(this);
+        dragonBoat = (Button) findViewById(R.id.dragonBoat);
+        dragonBoat.setOnClickListener(this);
+        mid_autumn = (Button) findViewById(R.id.mid_autumn);
+        mid_autumn.setOnClickListener(this);
+        national = (Button) findViewById(R.id.national);
+        national.setOnClickListener(this);
+        reset = (Button) findViewById(R.id.reset);
+        reset.setOnClickListener(this);
+        determine = (Button) findViewById(R.id.determine);
+        determine.setOnClickListener(this);
+        screen_main = (FrameLayout) findViewById(R.id.screen_main);
+        screen_main.setOnClickListener(this);
         Home_Image = (ImageView) findViewById(R.id.Home_Image);
         Home_Image.setOnClickListener(this);
-        Deawer_name = (TextView) findViewById(R.id.Deawer_name);
-        Deawer_name.setOnClickListener(this);
         Deawer_nuber = (TextView) findViewById(R.id.Deawer_nuber);
         Deawer_nuber.setOnClickListener(this);
-        head_portrait_linear = (LinearLayout) findViewById(R.id.head_portrait_linear);
+        Deawer_name = (TextView) findViewById(R.id.Deawer_name);
+        Deawer_name.setOnClickListener(this);
+        image_go = (ImageView) findViewById(R.id.image_go);
+        image_go.setOnClickListener(this);
+        head_portrait_linear = (RelativeLayout) findViewById(R.id.head_portrait_linear);
         head_portrait_linear.setOnClickListener(this);
         information_linear = (LinearLayout) findViewById(R.id.information_linear);
         information_linear.setOnClickListener(this);
@@ -153,9 +178,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Need_to_know.setOnClickListener(this);
         set_linear = (LinearLayout) findViewById(R.id.set_linear);
         set_linear.setOnClickListener(this);
+        button_application = (Button) findViewById(R.id.button_application);
+        button_application.setOnClickListener(this);
         dl_left = (DrawerLayout) findViewById(R.id.dl_left);
         dl_left.setOnClickListener(this);
     }
+
 
     private void initDrawerLayout() {
         mDrawerLayout = (DrawerLayout) findViewById(R.id.dl_left);
@@ -165,9 +193,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mImage.setOnClickListener(this);
         image_orientate.setOnClickListener(this);
         image_personal.setOnClickListener(this);
+
     }
 
-    //??????4
     private void initCeMenu() {
         mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.app_name, R.string.app_name) {
             @Override
@@ -193,9 +221,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if (isBool) {
                     linear_main.setVisibility(View.GONE);
                     nearpet_frame.setVisibility(View.VISIBLE);
-                    nearimage_main.setImageResource(R.drawable.up_arrow);
+                    nearimage_main.setImageResource(R.mipmap.up_arrow);
+                    petimage_main.setImageResource(R.mipmap.down_arrow);
+                    screenimage_main.setImageResource(R.mipmap.down_arrow);
                     nearpet_popu.setLayoutManager(new LinearLayoutManager(this));
-                    if (userList2.size()==0) {
+                    if (userList2.size() == 0) {
                         userList2.add("附近优先");
                         userList2.add("好评优先");
                         userList2.add("订单优先");
@@ -205,18 +235,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     nearpet_popu.setAdapter(new MyNearPetAdapter(userList2));
                     isBool = false;
                 } else {
-                    nearimage_main.setImageResource(R.drawable.down_arrow);
+                    nearimage_main.setImageResource(R.mipmap.down_arrow);
                     nearpet_frame.setVisibility(View.GONE);
                     linear_main.setVisibility(View.VISIBLE);
                     isBool = true;
                 }
                 break;
-            case R.id.pet_linear:
+            case R.id.pet_linear2:
                 if (isBool) {
                     linear_main.setVisibility(View.GONE);
                     nearpet_frame.setVisibility(View.VISIBLE);
                     nearpet_popu.setLayoutManager(new LinearLayoutManager(this));
-                    if (userList1.size()==0) {
+                    if (userList1.size() == 0) {
                         userList1.add("小型犬");
                         userList1.add("中型犬");
                         userList1.add("大型犬");
@@ -225,10 +255,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         userList1.add("幼犬");
                     }
                     nearpet_popu.setAdapter(new MyNearPetAdapter(userList1));
-                    petimage_main.setImageResource(R.drawable.up_arrow);
+                    petimage_main.setImageResource(R.mipmap.up_arrow);
+                    screenimage_main.setImageResource(R.mipmap.down_arrow);
+                    nearimage_main.setImageResource(R.mipmap.down_arrow);
                     isBool = false;
                 } else {
-                    petimage_main.setImageResource(R.drawable.down_arrow);
+                    petimage_main.setImageResource(R.mipmap.down_arrow);
                     nearpet_frame.setVisibility(View.GONE);
                     linear_main.setVisibility(View.VISIBLE);
                     isBool = true;
@@ -238,24 +270,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if (isBool) {
                     linear_main.setVisibility(View.GONE);
                     screen_main.setVisibility(View.VISIBLE);
-                    screenimage_main.setImageResource(R.drawable.up_arrow);
+                    screenimage_main.setImageResource(R.mipmap.up_arrow);
+                    nearimage_main.setImageResource(R.mipmap.down_arrow);
+                    petimage_main.setImageResource(R.mipmap.down_arrow);
                     isBool = false;
                 } else {
-                    screenimage_main.setImageResource(R.drawable.down_arrow);
+                    screenimage_main.setImageResource(R.mipmap.down_arrow);
                     linear_main.setVisibility(View.VISIBLE);
                     screen_main.setVisibility(View.GONE);
                     isBool = true;
                 }
                 break;
             case R.id.selectcity_text_main:
-
+                Intent intent1 = new Intent(MainActivity.this, ScreenActivity.class);
+                startActivity(intent1);
                 break;
             case R.id.image_personal:
                 break;
             case R.id.image_orientate:
                 break;
             case R.id.head_portrait_linear:
-                Intent intent = new Intent(MainActivity.this,LoginActivity.class);
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(intent);
                 break;
             case R.id.information_linear:
@@ -272,4 +307,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         }
     }
+
 }
