@@ -66,12 +66,10 @@ public class HttpUntils implements IoHttp{
     }
 
     @Override
-    public <T> void post(String url,Map<String, String> bodymap,final CallBackListener<T> callback) {
+    public <T> void post(String url,String JSON,final CallBackListener<T> callback) {
 
         FormBody.Builder body = new FormBody.Builder();
-        for (String s: bodymap.keySet()) {
-            body.add(s,bodymap.get(s));
-        }
+        body.add("data",JSON);
 
         Request request = new Request.Builder().url(url).post(body.build()).build();
 

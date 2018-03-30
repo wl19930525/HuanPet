@@ -26,6 +26,7 @@ import com.huanpet.huanpet.screen.ScreenActivity;
 import com.huanpet.huanpet.untils.CJSON;
 import com.huanpet.huanpet.untils.Md5Encrypt;
 import com.huanpet.huanpet.view.activity.loginregist.LoginActivity;
+import com.huanpet.huanpet.view.activity.pet.MyPetActivity;
 import com.huanpet.huanpet.view.adapter.MyNearPetAdapter;
 
 import java.io.IOException;
@@ -105,28 +106,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initData() {
-        Map<String, Object> param = new HashMap<>();
-        param.put("beginIndex", "0");
-        param.put("coordX", "40.116384");
-        param.put("coordY", "116.250374");
-        param.put("endIndex", "10");
-        param.put("orderBy", "distance asc");
-        String jsonMap = CJSON.toJSONMap(param);
-        OkHttpClient okHttpClient = new OkHttpClient();
-        FormBody formBody = new FormBody.Builder().add("data",jsonMap).build();
-        Request request = new Request.Builder().url("http://123.56.150.230:8885/dog_family/user/register.jhtml").post(formBody).build();
-        okHttpClient.newCall(request).enqueue(new Callback() {
-            @Override
-            public void onFailure(Call call, IOException e) {
-                Log.e("_____----————",e.getMessage());
-            }
-
-            @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                String string = response.body().string();
-                Log.e("_____----——————",string);
-            }
-        });
     }
 
     private void initView() {
@@ -318,6 +297,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     isBool = true;
                 }
                 break;
+
             case R.id.selectcity_text_main:
                 Intent intent1 = new Intent(MainActivity.this, ScreenActivity.class);
                 startActivity(intent1);
@@ -335,6 +315,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.information_linear:
                 break;
             case R.id.pet_linear:
+                Intent intent3 = new Intent(MainActivity.this, MyPetActivity.class);
+                startActivity(intent3);
                 break;
             case R.id.orderfrom_linear:
                 break;

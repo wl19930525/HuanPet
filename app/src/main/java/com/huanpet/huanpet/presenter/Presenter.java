@@ -30,8 +30,8 @@ public class Presenter implements Contract.PresenterInf{
     }
 
     @Override
-    public void doSumshing(String url, Map<String, String> hendmap, Map<String, String> bodymap) {
-        modelInf.Regist(url, hendmap, bodymap, new CallBackListener<String>() {
+    public void doSumshing(String url,String JSON) {
+        modelInf.Regist(url, JSON, new CallBackListener<String>() {
             @Override
             public void Error(String string) {
 
@@ -40,6 +40,7 @@ public class Presenter implements Contract.PresenterInf{
             @Override
             public void Success(String s) {
                 viewInf.UpdataUi(s);
+
             }
         });
     }

@@ -6,8 +6,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
-import android.util.Log;
-
 /**
  *
  * @Description:(签名工具类)
@@ -64,7 +62,6 @@ public class SignUtil {
 	/**
 	 * 把数组所有元素排序，并按照�?�参�?=参数值�?�的模式用�??&”字符拼接成字符�?
 	 *
-	 * @param params
 	 *            �?要排序并参与字符拼接的参数组
 	 * @return 拼接后字符串
 	 */

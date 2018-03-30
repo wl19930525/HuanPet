@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.huanpet.huanpet.R;
 import com.huanpet.huanpet.base.BaseActivity;
 import com.huanpet.huanpet.mapdemo.ToastUtil;
+import com.huanpet.huanpet.presenter.contract.Contract;
 import com.huanpet.huanpet.untils.AppUtils;
 import com.huanpet.huanpet.untils.CJSON;
 import com.huanpet.huanpet.untils.CallBackListener;
@@ -43,7 +44,7 @@ import okhttp3.Response;
 
 import static com.umeng.socialize.utils.DeviceConfig.context;
 
-public class RegistActivity extends BaseActivity implements View.OnClickListener {
+public class RegistActivity extends BaseActivity implements View.OnClickListener,Contract.ViewInf {
 
     private Handler mHandler;
     private TextView text_cencel;
@@ -67,38 +68,6 @@ public class RegistActivity extends BaseActivity implements View.OnClickListener
 
     @Override
     protected void initData() {
-        //Map<String,String> map = new HashMap<>();
-        //map.put("data",
-        // "{
-        //
-        // \"header\":{
-        // \"sign\":\"EE2DCEEBB1EF53EBEF46A92B2BA91B7D\",
-        // \"ip\":\"172.16.48.7\",
-        // \"channel\":\"android\",
-        // \"token\":\"EE2DCEEBB1EF53EBEF46A92B2BA91B7D\"},
-        // \"body\":{
-        // \"userPhone\":\"17611030319\",
-        // \"userName\":\"ww123456\",
-        // \"password\":\"E99F09F4B9F871A8789EF7E736AE8F5F\"
-        // },
-        // }\"");
-
-        /**
-         * {
-         "header": {
-         "sign": "EE2DCEEBB1EF53EBEF46A92B2BA91B7D",
-         "ip": "172.28.24.3",
-         “token”:” EE2DCEEBB1EF53EBEF46A92B2BA91B7D”,
-         "channel": "android"
-         },
-         "body": {
-         "userPhone": "18234834396",
-         “userName”:”琉夏”,
-         “password”:”123456”
-         }
-         }
-
-         */
 
         Map<String, Object> param = new HashMap<>();
         param.put("userPhone", "17611030319");
@@ -141,6 +110,12 @@ public class RegistActivity extends BaseActivity implements View.OnClickListener
 
     @Override
     public void onClick(View v) {
+
+    }
+
+    @Override
+    public <T> void UpdataUi(T t) {
+
 
     }
 }

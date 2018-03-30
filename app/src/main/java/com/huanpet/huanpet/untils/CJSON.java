@@ -96,7 +96,6 @@ public class CJSON extends JSON {
 				json.append(COMMA);
 		}
 
-		//"{"header":{"sign":"EE2DCEEBB1EF53EBEF46A92B2BA91B7D","ip":"172.16.48.7","channel":"android","token":"EE2DCEEBB1EF53EBEF46A92B2BA91B7D"},"body":{"userPhone":"17611030319","userName":"ww123456","password":"wl7639319",}}"
 
 		toContent(TokenUtil.TOKEN, FileUtil.getToken());
 		json.append(END_BRACES + COMMA);
@@ -108,11 +107,7 @@ public class CJSON extends JSON {
 			int count = keys.size();
 			for (int i = 0; i < count; i++) {
 				if (params.get(keys.get(i)) != null) {
-					if (params.get(keys.get(i)).equals("null")
-							|| params.get(keys.get(i)).equals("0")) {
-						count--;
-						continue;
-					}
+
 					toContent(keys.get(i), params.get(keys.get(i)));
 					if (!(i == count - 1))
 						json.append(COMMA);
