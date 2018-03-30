@@ -66,18 +66,14 @@ public class HttpUntils implements IoHttp{
     }
 
     @Override
-    public <T> void post(String url, Map<String, String> headmap,Map<String, String> bodymap,final CallBackListener<T> callback) {
+    public <T> void post(String url,Map<String, String> bodymap,final CallBackListener<T> callback) {
 
         FormBody.Builder body = new FormBody.Builder();
         for (String s: bodymap.keySet()) {
             body.add(s,bodymap.get(s));
         }
 
-        Request.Builder post = new Request.Builder().url(url).post(body.build());
-        for(String str : headmap.keySet()){
-            post.addHeader(str,headmap.get(str));
-        }
-        Request request = post.build();
+        Request request = new Request.Builder().url(url).post(body.build()).build();
 
 
         okHttpClient.newCall(request).enqueue(new Callback() {

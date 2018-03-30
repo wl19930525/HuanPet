@@ -20,7 +20,7 @@ public class HttpModel implements ModelInf{
 
     @Override
     public <T> void Regist(String string, Map<String, String> hendmap, Map<String, String> bodymap, CallBackListener<T> callBackListener) {
-        HttpUntils.getInstance().post(string,hendmap,bodymap,callBackListener);
+        HttpUntils.getInstance().post(string,bodymap,callBackListener);
     }
 
 

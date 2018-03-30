@@ -23,12 +23,23 @@ import android.widget.Toast;
 
 import com.huanpet.huanpet.R;
 import com.huanpet.huanpet.screen.ScreenActivity;
+import com.huanpet.huanpet.untils.CJSON;
 import com.huanpet.huanpet.untils.Md5Encrypt;
 import com.huanpet.huanpet.view.activity.loginregist.LoginActivity;
 import com.huanpet.huanpet.view.adapter.MyNearPetAdapter;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.FormBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private ImageView image_personal;
@@ -90,6 +101,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         initDrawerLayout();
         initView();
         initCeMenu();
+        initData();
+    }
+
+    private void initData() {
+        Map<String, Object> param = new HashMap<>();
+        param.put("beginIndex", "0");
+        param.put("coordX", "40.116384");
+        param.put("coordY", "116.250374");
+        param.put("endIndex", "10");
+        param.put("orderBy", "distance asc");
+        String jsonMap = CJSON.toJSONMap(param);
+        OkHttpClient okHttpClient = new OkHttpClient();
+        FormBody formBody = new FormBody.Builder().add("data",jsonMap).build();
+        Request request = new Request.Builder().url("http://123.56.150.230:8885/dog_family/user/register.jhtml").post(formBody).build();
+        okHttpClient.newCall(request).enqueue(new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                Log.e("_____----————",e.getMessage());
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                String string = response.body().string();
+                Log.e("_____----——————",string);
+            }
+        });
     }
 
     private void initView() {
@@ -288,6 +325,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.image_personal:
                 break;
             case R.id.image_orientate:
+                Intent intent2 = new Intent(MainActivity.this,OrientateActivity.class);
+                startActivity(intent2);
                 break;
             case R.id.head_portrait_linear:
                 Intent intent = new Intent(MainActivity.this, LoginActivity.class);
