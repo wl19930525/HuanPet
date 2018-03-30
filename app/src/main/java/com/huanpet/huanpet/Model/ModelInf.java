@@ -12,6 +12,6 @@ import java.util.Map;
 
 public interface ModelInf {
     <T>void Login(String string, Map<String,String> map, CallBackListener<T> callBackListener);
-    <T>void Regist(String string, String JSON,CallBackListener<T> callBackListener);
+    <T>void Regist(String string,String JSON,CallBackListener<T> callBackListener);
 
 }

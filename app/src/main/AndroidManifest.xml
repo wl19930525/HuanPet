@@ -77,7 +77,7 @@
             //开发者申请的key</meta-data>
 
         <activity android:name=".view.activity.OrientateActivity" />
-        <activity android:name=".view.activity.pet.MyPetActivity"></activity>
+        <activity android:name=".view.activity.loginregist.PartyLoginActivity"></activity>
     </application>
 
 </manifest>
