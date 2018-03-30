@@ -66,12 +66,10 @@ public class HttpUntils implements IoHttp{
     }
 
     @Override
-    public <T> void post(String url,Map<String, String> bodymap,final CallBackListener<T> callback) {
+    public <T> void post(String url,String JSONs,final CallBackListener<T> callback) {
 
         FormBody.Builder body = new FormBody.Builder();
-        for (String s: bodymap.keySet()) {
-            body.add(s,bodymap.get(s));
-        }
+        body.add("data",JSONs);
 
         Request request = new Request.Builder().url(url).post(body.build()).build();
 
@@ -86,7 +84,7 @@ public class HttpUntils implements IoHttp{
             public void onResponse(Call call, Response response) throws IOException {
 
                 String result = response.body().string();
-
+                Log.e("大大大大大",result);
                 Gson gson = new Gson();
 
 

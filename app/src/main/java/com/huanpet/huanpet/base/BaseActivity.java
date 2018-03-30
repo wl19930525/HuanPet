@@ -22,6 +22,8 @@ import com.amap.api.services.geocoder.RegeocodeResult;
 import com.huanpet.huanpet.R;
 import com.huanpet.huanpet.view.activity.MainActivity;
 
+import org.greenrobot.eventbus.EventBus;
+
 /**
  * Created by 执笔画商
  * on 2018/3/5.
