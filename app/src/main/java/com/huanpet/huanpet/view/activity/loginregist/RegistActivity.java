@@ -178,7 +178,7 @@ public class RegistActivity extends BaseActivity implements View.OnClickListener
     public boolean isUserName(String name) {
 
         if (name.length() < 3) {
-            Toast.makeText(this, "用户名不合格", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "用户名不合格，请重新输入", Toast.LENGTH_SHORT).show();
             return false;
         } else if (name.contains(" ")) {
             Toast.makeText(this, "用户名不合法", Toast.LENGTH_SHORT).show();
