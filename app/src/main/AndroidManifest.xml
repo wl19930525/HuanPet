@@ -60,12 +60,32 @@
         <activity android:name=".view.activity.PersonalActivity" />
         <activity android:name=".view.activity.pet.Add_PetsActivity" />
         <activity android:name=".view.activity.MainActivity">
+
+
+        </activity>
+        <activity android:name=".view.activity.MobileActivity" >
+        </activity>
+        <activity android:name=".view.activity.pet.PetTypeActivity"></activity>
+        <activity android:name=".screen.ScreenActivity"></activity>
+        <activity android:name=".view.activity.pet.ImmuneConditionActivity"></activity>
+
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="6c5df883e927ab4d7c52cec469139cfc">
+            //开发者申请的key
+        </meta-data>
+
+        <activity android:name=".view.activity.DtailsActivity">
+
+
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".view.activity.MobileActivity" />
         <activity android:name=".view.activity.pet.PetTypeActivity" />
         <activity android:name=".screen.ScreenActivity" />
