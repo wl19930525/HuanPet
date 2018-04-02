@@ -11,5 +11,5 @@ import java.util.Map;
 public interface IoHttp {
     <T> void get(String url, CallBackListener<T> callback);
 
-    <T> void post(String url, Map<String,String> map ,Map<String, String> bodymap, CallBackListener<T> callback);
+    <T> void post(String url,String string, CallBackListener<T> callback);
 }

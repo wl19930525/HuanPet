@@ -13,15 +13,15 @@ import java.util.Map;
 
 public class HttpModel implements ModelInf{
 
+
     @Override
-    public <T> void Login(String string, Map<String,String> map, CallBackListener<T> callBackListener) {
+    public <T> void Login(String string, String stringJson, CallBackListener<T> callBackListener) {
 
     }
 
     @Override
-    public <T> void Regist(String string, Map<String, String> hendmap, Map<String, String> bodymap, CallBackListener<T> callBackListener) {
-        HttpUntils.getInstance().post(string,hendmap,bodymap,callBackListener);
+    public <T> void Regist(String string, String stringjson, CallBackListener<T> callBackListener) {
+        HttpUntils.getInstance().post(string,stringjson,callBackListener);
     }
-
 
 }
