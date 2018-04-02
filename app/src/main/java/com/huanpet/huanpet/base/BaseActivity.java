@@ -131,7 +131,7 @@ public abstract class BaseActivity extends AppCompatActivity{
             }
         }
     }
-
+    //取消
     protected void settextcencel(boolean show) {
         if (text_cencel != null) {
             if (show) {

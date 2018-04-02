@@ -81,6 +81,8 @@ public class RegistActivity extends BaseActivity implements View.OnClickListener
 
     @Override
     protected void initView() {
+        settextcencel(true);
+        setTextlogin(true);
         editRegistPhonenumber = findViewById(R.id.editRegist_phonenumber);
         editRegistVerificationcode = findViewById(R.id.editRegist_Verificationcode);
         editRegistUsername = findViewById(R.id.editRegist_username);
@@ -142,7 +144,7 @@ public class RegistActivity extends BaseActivity implements View.OnClickListener
         }
     }
 
-    public static boolean isPhoneNumber(String number) {
+    public  boolean isPhoneNumber(String number) {
     /*
     移动：134、135、136、137、138、139、150、151、152、157(TD)、158、159、178(新)、182、184、187、188
     联通：130、131、132、152、155、156、185、186
@@ -151,6 +153,7 @@ public class RegistActivity extends BaseActivity implements View.OnClickListener
     */
         String num = "[1][34578]\\d{9}";//"[1]"代表第1位为数字1，"[34578]"代表第二位可以为3、4、5、7、8中的一个，"\\d{9}"代表后面是可以是0～9的数字，有9位。
         if (TextUtils.isEmpty(number)) {
+            Toast.makeText(RegistActivity.this, "用户名不合格", Toast.LENGTH_SHORT).show();
             return false;
         } else {
             //matches():字符串是否在给定的正则表达式匹配
@@ -161,7 +164,7 @@ public class RegistActivity extends BaseActivity implements View.OnClickListener
     public boolean isPassWord(String pass) {
 
         if (pass.length() < 6) {
-            Toast.makeText(RegistActivity.this, "密码长度不能小于6位", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "密码长度不能小于6位", Toast.LENGTH_SHORT).show();
             return false;
         } else if (pass.length() > 12) {
             Toast.makeText(this, "密码长度不能大于12位", Toast.LENGTH_SHORT).show();
