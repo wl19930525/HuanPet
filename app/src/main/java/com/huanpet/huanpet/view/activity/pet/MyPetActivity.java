@@ -43,10 +43,6 @@ public class MyPetActivity extends AppCompatActivity {
         myPetAdapter = new MyPetAdapter(this, myPetBean);
         MyPet_Recycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         MyPet_Recycler.setAdapter(myPetAdapter);
-        if (myPetBean==null) {
-            ChongwuTianjia.setVisibility(View.VISIBLE);
-            MyPet_Recycler.setVisibility(View.GONE);
-        }
     }
 
     private void initView() {

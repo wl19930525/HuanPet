@@ -14,6 +14,5 @@ public interface IoHttp {
 
     <T> void post(String url,String string, CallBackListener<T> callback);
 
-    <T> void post(String url ,String JSON, CallBackListener<T> callback);
 
 }

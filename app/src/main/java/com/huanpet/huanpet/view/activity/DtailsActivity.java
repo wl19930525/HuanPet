@@ -7,16 +7,14 @@ import android.widget.Toast;
 
 import com.huanpet.huanpet.R;
 import com.huanpet.huanpet.bean.HomeBase;
-import com.huanpet.huanpet.presenter.DatailsPresenter;
 import com.huanpet.huanpet.presenter.contract.Contract;
 import com.huanpet.huanpet.untils.CJSON;
+import com.umeng.qq.handler.a;
 
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import javax.xml.datatype.Duration;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -24,6 +22,8 @@ import okhttp3.FormBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+
+import static com.umeng.qq.handler.a.s;
 
 public class DtailsActivity extends AppCompatActivity implements Contract.ViewInf{
     private String url="http://123.56.150.230:8885/dog_family/users/getUsersInfoByVO.jhtml";
@@ -37,8 +37,8 @@ public class DtailsActivity extends AppCompatActivity implements Contract.ViewIn
         map.put("coordY","116.250374");
         map.put("endIndex","10");
         map.put("orderBy","distance asc");
-        String s = CJSON.toJSON0(map);
-        FormBody data = new FormBody.Builder().add("data",s).build();
+        String s = CJSON.toJSONMap(map);
+        FormBody data = new FormBody.Builder().add("data", a.s).build();
         Request post = new Request.Builder().url(url).post(data).build();
         OkHttpClient okHttpClient=new OkHttpClient.Builder().build();
         okHttpClient.newCall(post).enqueue(new Callback() {
@@ -59,7 +59,7 @@ public class DtailsActivity extends AppCompatActivity implements Contract.ViewIn
     public String getCJson(){
         Map<String,Object> map=new HashMap<>();
         map.put("userId","d80488022f1e4278a3149f54beeac02a");
-        String s = CJSON.toJSON0(map);
+        String s = CJSON.toJSONMap(map);
         return s;
     }
 

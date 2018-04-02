@@ -2,16 +2,13 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-
+      <module fileurl="file://$PROJECT_DIR$/HuanPet.iml" filepath="$PROJECT_DIR$/HuanPet.iml" />
+      <module fileurl="file://D:\AndroidProject2\text2\HuanPet.iml" filepath="D:\AndroidProject2\text2\HuanPet.iml" />
       <module fileurl="file://D:\internal\HuanPet2\HuanPet.iml" filepath="D:\internal\HuanPet2\HuanPet.iml" />
-      <module fileurl="file://D:\AndroidProject2\text2\HuanPet.iml" filepath="D:\AndroidProject2\text2\HuanPet.iml" />
-      <module fileurl="file://$PROJECT_DIR$/HuanPet2.iml" filepath="$PROJECT_DIR$/HuanPet2.iml" />
-
-      <module fileurl="file://D:\AndroidProject2\text2\HuanPet.iml" filepath="D:\AndroidProject2\text2\HuanPet.iml" />
       <module fileurl="file://D:\Android_Internet_of_Things\Androids\Android_big_shixun\HuanPet8\HuanPet.iml" filepath="D:\Android_Internet_of_Things\Androids\Android_big_shixun\HuanPet8\HuanPet.iml" />
-
+      <module fileurl="file://D:\AndroidProject\HuanPet\HuanPet2.iml" filepath="D:\AndroidProject\HuanPet\HuanPet2.iml" />
       <module fileurl="file://D:\AndroidProject\HuanPet\HuanPet3.iml" filepath="D:\AndroidProject\HuanPet\HuanPet3.iml" />
-      <module fileurl="file://$PROJECT_DIR$/HuanPet8.iml" filepath="$PROJECT_DIR$/HuanPet8.iml" />
+      <module fileurl="file://D:\AndroidProject\HuanPet\HuanPet8.iml" filepath="D:\AndroidProject\HuanPet\HuanPet8.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://D:\AndroidProject\HuanPet\text2.iml" filepath="D:\AndroidProject\HuanPet\text2.iml" />
     </modules>

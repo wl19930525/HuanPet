@@ -9,7 +9,6 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -19,46 +18,28 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.huanpet.huanpet.R;
 import com.huanpet.huanpet.bean.HomeBase;
 import com.huanpet.huanpet.presenter.Presenter;
 import com.huanpet.huanpet.presenter.contract.Contract;
 import com.huanpet.huanpet.screen.ScreenActivity;
-import com.huanpet.huanpet.untils.CJSON;
 
-import com.huanpet.huanpet.untils.CallBackListener;
-import com.huanpet.huanpet.untils.HttpUntils;
-import com.huanpet.huanpet.untils.Md5Encrypt;
+import com.huanpet.huanpet.untils.CJSON;
 import com.huanpet.huanpet.view.activity.loginregist.LoginActivity;
 import com.huanpet.huanpet.view.adapter.HomeListAdapter;
 
-import com.huanpet.huanpet.untils.Md5Encrypt;
-import com.huanpet.huanpet.view.activity.loginregist.LoginActivity;
 import com.huanpet.huanpet.view.activity.pet.MyPetActivity;
 
 import com.huanpet.huanpet.view.adapter.MyNearPetAdapter;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 
-
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.FormBody;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
-
-
-
-
-public class MainActivity extends AppCompatActivity implements View.OnClickListener ,Contract.ViewInf{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener,Contract.ViewInf {
     private ImageView image_personal;
     private ImageView image_orientate;
     private LinearLayout search;
@@ -118,7 +99,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         new Presenter(this).doSumshing2(url,getCJson());
         initView();
         initDrawerLayout();
-        getCJson();
         initCeMenu();
 
 
@@ -130,17 +110,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         map.put("coordY","116.250374");
         map.put("endIndex","10");
         map.put("orderBy","distance asc");
-        String s = CJSON.toJSON0(map);
+        String s = CJSON.toJSONMap(map);
         return s;
 
-        initData();
-    }
-
-    private void initData() {
 
     }
-
-
 
     private void initView() {
 
@@ -266,7 +240,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
 
-            case R.id.near_linear:
+            case R.id.neartext_main:
                 Log.e("看看监听", "OK");
                 if (isBool) {
                     linear_main.setVisibility(View.GONE);
@@ -291,7 +265,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     isBool = true;
                 }
                 break;
-            case R.id.pet_linear2:
+            case R.id.pwttext_main:
                 if (isBool) {
                     linear_main.setVisibility(View.GONE);
                     nearpet_frame.setVisibility(View.VISIBLE);
@@ -370,13 +344,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void upDataHomeUi(List<HomeBase.DescBean> list) {
-
         RecyclerView recy=findViewById(R.id.home_recy_main);
         recy.setLayoutManager(new LinearLayoutManager(MainActivity.this));
         HomeListAdapter adapter = new HomeListAdapter(list, MainActivity.this);
         recy.setAdapter(adapter);
     }
-
 
 
 }

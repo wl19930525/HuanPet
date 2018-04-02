@@ -3,7 +3,7 @@ package com.huanpet.huanpet.presenter.contract;
 import com.huanpet.huanpet.bean.HomeBase;
 
 import java.util.List;
-import java.util.Map;
+
 
 /**
  * Created by 执笔画商
@@ -20,10 +20,9 @@ public interface Contract {
     }
     public interface PresenterInf{
 
-        void doSumshing(String url, String string);
-        void doSumshing2(String url,String stringJson);
+       public void doSumshing(String url, String string);
+        public void doSumshing2(String url,String stringJson);
 
-        void doSumshing(String url, String JSON);
 
     }
 

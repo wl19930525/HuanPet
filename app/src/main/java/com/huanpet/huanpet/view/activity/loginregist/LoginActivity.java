@@ -1,20 +1,13 @@
 package com.huanpet.huanpet.view.activity.loginregist;
 
 import android.content.Intent;
-import android.os.Bundle;
-import android.support.annotation.MainThread;
-import android.support.annotation.Nullable;
-import android.telephony.gsm.GsmCellLocation;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.gson.Gson;
 import com.huanpet.huanpet.R;
 import com.huanpet.huanpet.base.BaseActivity;
 import com.huanpet.huanpet.untils.CJSON;
@@ -22,7 +15,6 @@ import com.huanpet.huanpet.untils.CallBackListener;
 import com.huanpet.huanpet.untils.HttpUntils;
 import com.huanpet.huanpet.view.activity.loginregist.loginbean.EventBusBean.EventBusBean;
 import com.huanpet.huanpet.view.activity.loginregist.loginbean.LoginBean;
-import com.lzy.okhttputils.https.HttpsUtils;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
