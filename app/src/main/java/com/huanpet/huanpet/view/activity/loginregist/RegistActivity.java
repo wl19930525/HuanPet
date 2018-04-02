@@ -82,7 +82,7 @@ public class RegistActivity extends BaseActivity implements View.OnClickListener
     @Override
     protected void initView() {
         settextcencel(true);
-
+        setTextlogin(true);
         editRegistPhonenumber = findViewById(R.id.editRegist_phonenumber);
         editRegistVerificationcode = findViewById(R.id.editRegist_Verificationcode);
         editRegistUsername = findViewById(R.id.editRegist_username);
