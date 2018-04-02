@@ -21,4 +21,9 @@
         <item name="colorControlNormal">#c5c5c5</item>
 
     </style>
+    <style name="foodRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/ratingstars</item>
+        <item name="android:minHeight">22dip</item>
+        <item name="android:maxHeight">24dip</item>
+    </style>
 </resources>

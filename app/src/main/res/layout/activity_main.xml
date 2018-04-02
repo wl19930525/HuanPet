@@ -136,11 +136,22 @@
         android:visibility="gone"
         android:layout_width="match_parent"
         android:orientation="vertical"
+        android:background="#F6F6F6"
         android:layout_height="match_parent">
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:id="@+id/home_recy_main">
+
+        </android.support.v7.widget.RecyclerView>
+
+
+
     </LinearLayout>
     <FrameLayout
         android:id="@+id/nearpet_frame"
-        android:visibility="gone"
+        android:visibility="visible"
         android:background="#7f7f7f"
         android:layout_width="match_parent"
         android:layout_height="0dp"

@@ -22,11 +22,22 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.huanpet.huanpet.R;
+import com.huanpet.huanpet.bean.HomeBase;
+import com.huanpet.huanpet.presenter.Presenter;
+import com.huanpet.huanpet.presenter.contract.Contract;
 import com.huanpet.huanpet.screen.ScreenActivity;
 import com.huanpet.huanpet.untils.CJSON;
+
+import com.huanpet.huanpet.untils.CallBackListener;
+import com.huanpet.huanpet.untils.HttpUntils;
+import com.huanpet.huanpet.untils.Md5Encrypt;
+import com.huanpet.huanpet.view.activity.loginregist.LoginActivity;
+import com.huanpet.huanpet.view.adapter.HomeListAdapter;
+
 import com.huanpet.huanpet.untils.Md5Encrypt;
 import com.huanpet.huanpet.view.activity.loginregist.LoginActivity;
 import com.huanpet.huanpet.view.activity.pet.MyPetActivity;
+
 import com.huanpet.huanpet.view.adapter.MyNearPetAdapter;
 
 import java.io.IOException;
@@ -35,6 +46,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+
+
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.FormBody;
@@ -42,7 +55,10 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+
+
+public class MainActivity extends AppCompatActivity implements View.OnClickListener ,Contract.ViewInf{
     private ImageView image_personal;
     private ImageView image_orientate;
     private LinearLayout search;
@@ -93,20 +109,38 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Boolean isBool = true;
     private List<String> userList1 = new ArrayList<>();
     private List<String> userList2 = new ArrayList<>();
-
+    private String url="http://123.56.150.230:8885/dog_family/users/getUsersInfoByVO.jhtml";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        initDrawerLayout();
+        new Presenter(this).doSumshing2(url,getCJson());
         initView();
+        initDrawerLayout();
+        getCJson();
         initCeMenu();
+
+
+    }
+    public String getCJson(){
+        Map<String,Object> map=new HashMap<>();
+        map.put("beginIndex","0");
+        map.put("coordX","40.116384");
+        map.put("coordY","116.250374");
+        map.put("endIndex","10");
+        map.put("orderBy","distance asc");
+        String s = CJSON.toJSON0(map);
+        return s;
+
         initData();
     }
 
     private void initData() {
+
     }
+
+
 
     private void initView() {
 
@@ -328,5 +362,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         }
     }
+
+    @Override
+    public <T> void UpdataUi(T t) {
+
+    }
+
+    @Override
+    public void upDataHomeUi(List<HomeBase.DescBean> list) {
+
+        RecyclerView recy=findViewById(R.id.home_recy_main);
+        recy.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+        HomeListAdapter adapter = new HomeListAdapter(list, MainActivity.this);
+        recy.setAdapter(adapter);
+    }
+
+
 
 }

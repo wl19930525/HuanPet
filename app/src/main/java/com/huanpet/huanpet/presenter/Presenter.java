@@ -2,6 +2,7 @@ package com.huanpet.huanpet.presenter;
 
 import com.huanpet.huanpet.Model.HttpModel;
 import com.huanpet.huanpet.Model.ModelInf;
+import com.huanpet.huanpet.bean.HomeBase;
 import com.huanpet.huanpet.presenter.contract.Contract;
 import com.huanpet.huanpet.untils.CallBackListener;
 import com.huanpet.huanpet.untils.HttpUntils;
@@ -31,8 +32,13 @@ public class Presenter implements Contract.PresenterInf{
     }
 
     @Override
+
+    public void doSumshing(String url,String stringJson) {
+        modelInf.Regist(url,stringJson, new CallBackListener<String>() {
+
     public void doSumshing(String url, String JSON) {
         HttpUntils.getInstance().post(url, JSON, new CallBackListener<String>() {
+
             @Override
             public void Error(String string) {
 
@@ -40,6 +46,24 @@ public class Presenter implements Contract.PresenterInf{
 
             @Override
             public void Success(String s) {
+
+            }
+        });
+    }
+
+    @Override
+    public void doSumshing2(String url, String stringJson) {
+        modelInf.Regist(url,stringJson, new CallBackListener<HomeBase>() {
+            @Override
+            public void Error(String string) {
+
+            }
+
+            @Override
+            public void Success(HomeBase s) {
+
+                viewInf.upDataHomeUi(s.getDesc());
+
 
             }
         });
