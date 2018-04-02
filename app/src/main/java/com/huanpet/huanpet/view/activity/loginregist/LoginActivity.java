@@ -112,7 +112,6 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                 break;
             //第三方QQ
             case R.id.image_QQ:
-
                 break;
             //第三方微信
             case R.id.image_Weixin:
