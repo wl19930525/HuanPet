@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView_petportrait"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="17dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="19dp"
+        app:srcCompat="@drawable/amap_man" />
+
+    <TextView
+        android:id="@+id/perTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imageView_petportrait"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_toEndOf="@+id/imageView_petportrait"
+        android:layout_toRightOf="@+id/imageView_petportrait"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/introduce"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageView_petportrait"
+        android:layout_alignLeft="@+id/perTitle"
+        android:layout_alignStart="@+id/perTitle"
+        android:text="TextView" />
+
+    <ImageView
+        android:id="@+id/petSex"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignBottom="@+id/perTitle"
+        android:layout_toEndOf="@+id/perTitle"
+        android:layout_toRightOf="@+id/perTitle"
+        app:srcCompat="@android:drawable/sym_def_app_icon" />
+</RelativeLayout>

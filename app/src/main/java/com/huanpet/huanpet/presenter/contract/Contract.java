@@ -19,8 +19,12 @@ public interface Contract {
 
     }
     public interface PresenterInf{
+
         void doSumshing(String url, String string);
         void doSumshing2(String url,String stringJson);
+
+        void doSumshing(String url, String JSON);
+
     }
 
 }

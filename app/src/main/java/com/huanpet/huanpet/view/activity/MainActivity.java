@@ -27,17 +27,34 @@ import com.huanpet.huanpet.presenter.Presenter;
 import com.huanpet.huanpet.presenter.contract.Contract;
 import com.huanpet.huanpet.screen.ScreenActivity;
 import com.huanpet.huanpet.untils.CJSON;
+
 import com.huanpet.huanpet.untils.CallBackListener;
 import com.huanpet.huanpet.untils.HttpUntils;
 import com.huanpet.huanpet.untils.Md5Encrypt;
 import com.huanpet.huanpet.view.activity.loginregist.LoginActivity;
 import com.huanpet.huanpet.view.adapter.HomeListAdapter;
+
+import com.huanpet.huanpet.untils.Md5Encrypt;
+import com.huanpet.huanpet.view.activity.loginregist.LoginActivity;
+import com.huanpet.huanpet.view.activity.pet.MyPetActivity;
+
 import com.huanpet.huanpet.view.adapter.MyNearPetAdapter;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+
+
+import okhttp3.Call;
+import okhttp3.Callback;
+import okhttp3.FormBody;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+
 
 
 
@@ -104,6 +121,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         getCJson();
         initCeMenu();
 
+
     }
     public String getCJson(){
         Map<String,Object> map=new HashMap<>();
@@ -114,6 +132,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         map.put("orderBy","distance asc");
         String s = CJSON.toJSON0(map);
         return s;
+
+        initData();
+    }
+
+    private void initData() {
+
     }
 
 
@@ -307,6 +331,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     isBool = true;
                 }
                 break;
+
             case R.id.selectcity_text_main:
                 Intent intent1 = new Intent(MainActivity.this, ScreenActivity.class);
                 startActivity(intent1);
@@ -314,6 +339,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.image_personal:
                 break;
             case R.id.image_orientate:
+                Intent intent2 = new Intent(MainActivity.this,OrientateActivity.class);
+                startActivity(intent2);
                 break;
             case R.id.head_portrait_linear:
                 Intent intent = new Intent(MainActivity.this, LoginActivity.class);
@@ -322,6 +349,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.information_linear:
                 break;
             case R.id.pet_linear:
+                Intent intent3 = new Intent(MainActivity.this, MyPetActivity.class);
+                startActivity(intent3);
                 break;
             case R.id.orderfrom_linear:
                 break;
