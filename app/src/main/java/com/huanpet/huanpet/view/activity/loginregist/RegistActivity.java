@@ -106,83 +106,73 @@ public class RegistActivity extends BaseActivity implements View.OnClickListener
         RegistVerificationcode = editRegistVerificationcode.getText().toString().trim();
         RegistUsername = editRegistUsername.getText().toString().trim();
         RegistPassword = editRegistPassword.getText().toString().trim();
+        isPhoneNumber(RegistPhonenumber);
+        isPassWord(RegistPassword);
+        isUserName(RegistUsername);
+        String url = "http://123.56.150.230:8885/dog_family/user/register.jhtml";
+        Map<String, Object> param = new HashMap<>();
+        param.put("userPhone", RegistPhonenumber);
+        param.put("userName", RegistUsername);
+        param.put("password", RegistPassword);
 
-        if (isPhoneNumber(RegistPhonenumber) && isPassWord(RegistPassword)) {
+        String s = CJSON.toJSONMap(param);
 
+        HttpUntils.getInstance().post(url, s, new CallBackListener<Object>() {
+            @Override
+            public void Error(String string) {
 
-            String url = "http://123.56.150.230:8885/dog_family/user/register.jhtml";
-            Map<String, Object> param = new HashMap<>();
-            param.put("userPhone", RegistPhonenumber);
-            param.put("userName", RegistUsername);
-            param.put("password", RegistPassword);
+            }
 
-            String s = CJSON.toJSONMap(param);
+            @Override
+            public void Success(Object o) {
 
-            HttpUntils.getInstance().post(url, s, new CallBackListener<Object>() {
-                @Override
-                public void Error(String string) {
+            }
+        });
 
-                }
+    }
 
-                @Override
-                public void Success(Object o) {
+    public void isPhoneNumber(String number) {
 
-                }
-            });
+        String num = "[1][34578]\\d{9}";//"[1]"代表第1位为数字1，"[34578]"代表第二位可以为3、4、5、7、8中的一个，"\\d{9}"代表后面是可以是0～9的数字，有9位。
+        if (TextUtils.isEmpty(number)) {
+            Toast.makeText(RegistActivity.this, "手机号不能为空", Toast.LENGTH_SHORT).show();
+        }
+        if (!number.matches(num)) {
+            Toast.makeText(this, "手机号输入有误", Toast.LENGTH_SHORT).show();
+        }
 
-            //这里没打印出来
+    }
+
+    public void isPassWord(String pass) {
+        if (pass.length() < 6) {
+            Toast.makeText(RegistActivity.this, "密码长度不能小于6位", Toast.LENGTH_SHORT).show();
+        } else if (pass.length() > 12) {
+            Toast.makeText(this, "密码长度不能大于12位", Toast.LENGTH_SHORT).show();
+        } else if (pass.contains(" ")) {
+            Toast.makeText(this, "密码不能有空格", Toast.LENGTH_SHORT).show();
+        } else if (pass.isEmpty()) {
+            Toast.makeText(this, "密码不能为空", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void isUserName(String name) {
+
+        if (name.length() <= 2) {
+            Toast.makeText(this, "用户名不能小于两位", Toast.LENGTH_SHORT).show();
+        } else if (name.contains(" ")) {
+            Toast.makeText(this, "用户名不能有空格", Toast.LENGTH_SHORT).show();
+        } else if (name.contains("/")) {
+            Toast.makeText(this, "用户名不能有非法字符", Toast.LENGTH_SHORT).show();
+        } else if (name.isEmpty()) {
+            Toast.makeText(this, "用户名不能为空", Toast.LENGTH_SHORT).show();
+        } else {
+
             EventBus.getDefault().postSticky((new EventBusBean(RegistPhonenumber, RegistPassword)));
 
             Intent intent = new Intent(RegistActivity.this, LoginActivity.class);
             startActivity(intent);
 
             finish();
-        } else {
-            return;
         }
-    }
-
-    public static boolean isPhoneNumber(String number) {
-    /*
-    移动：134、135、136、137、138、139、150、151、152、157(TD)、158、159、178(新)、182、184、187、188
-    联通：130、131、132、152、155、156、185、186
-    电信：133、153、170、173、177、180、181、189、（1349卫通）
-    总结起来就是第一位必定为1，第二位必定为3或5或8，其他位置的可以为0-9
-    */
-        String num = "[1][34578]\\d{9}";//"[1]"代表第1位为数字1，"[34578]"代表第二位可以为3、4、5、7、8中的一个，"\\d{9}"代表后面是可以是0～9的数字，有9位。
-        if (TextUtils.isEmpty(number)) {
-            return false;
-        } else {
-            //matches():字符串是否在给定的正则表达式匹配
-            return number.matches(num);
-        }
-    }
-
-    public boolean isPassWord(String pass) {
-
-        if (pass.length() < 6) {
-            Toast.makeText(RegistActivity.this, "密码长度不能小于6位", Toast.LENGTH_SHORT).show();
-            return false;
-        } else if (pass.length() > 12) {
-            Toast.makeText(this, "密码长度不能大于12位", Toast.LENGTH_SHORT).show();
-            return false;
-        } else {
-            Toast.makeText(this, "注册成功", Toast.LENGTH_SHORT).show();
-            return true;
-        }
-    }
-
-    public boolean isUserName(String name) {
-
-        if (name.length() < 3) {
-            Toast.makeText(this, "用户名不合格", Toast.LENGTH_SHORT).show();
-            return false;
-        } else if (name.contains(" ")) {
-            Toast.makeText(this, "用户名不合法", Toast.LENGTH_SHORT).show();
-            return false;
-        } else {
-            return true;
-        }
-
     }
 }

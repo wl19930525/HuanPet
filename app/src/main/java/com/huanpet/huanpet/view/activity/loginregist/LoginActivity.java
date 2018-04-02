@@ -112,6 +112,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                 break;
             //第三方QQ
             case R.id.image_QQ:
+
                 break;
             //第三方微信
             case R.id.image_Weixin:
@@ -143,24 +144,6 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
             }
         });
     }
-
-    /*private boolean isUserName(String User){
-        if (!User.equals(userName)){
-            Toast.makeText(this, "账号错误请重新输入", Toast.LENGTH_SHORT).show();
-            return false;
-        }else {
-            return true;
-        }
-    }
-    private boolean isPassWord(String pass){
-        if (!pass.equals(passWord)){
-            Toast.makeText(this, "密码错误请重新输入", Toast.LENGTH_SHORT).show();
-            return false;
-        }else {
-            return true;
-        }
-    }*/
-
 
     @Subscribe(sticky = true,threadMode = ThreadMode.MAIN)
     public void OnEvents(EventBusBean eventBusBean) {
