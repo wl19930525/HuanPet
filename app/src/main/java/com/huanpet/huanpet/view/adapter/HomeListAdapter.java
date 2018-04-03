@@ -53,8 +53,7 @@ public class HomeListAdapter extends RecyclerView.Adapter<HomeListAdapter.MyView
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
+                onc.onClick(position);
             }
         });
         holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {

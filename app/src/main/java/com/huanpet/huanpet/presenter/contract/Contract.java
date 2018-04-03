@@ -1,5 +1,6 @@
 package com.huanpet.huanpet.presenter.contract;
 
+import com.huanpet.huanpet.bean.DetailsBase;
 import com.huanpet.huanpet.bean.HomeBase;
 
 import java.util.List;
@@ -16,14 +17,14 @@ public interface Contract {
     public interface ViewInf{
         <T>void UpdataUi(T t);
         void upDataHomeUi(List<HomeBase.DescBean> list);
-
+    }
+    interface DetailsView{
+        void UpdataUi(DetailsBase.DescBean descBean);
     }
     public interface PresenterInf{
 
        public void doSumshing(String url, String string);
         public void doSumshing2(String url,String stringJson);
-
-
     }
 
 }

@@ -122,7 +122,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         HashMap<String, Object> map = new HashMap<>();
         map.put("userPhone", userName);
         map.put("password", passWord);
-        String s = CJSON.toJSONMap(map);
+        String s = CJSON.toJSONMap(map);//
         HttpUntils.getInstance().post(url, s, new CallBackListener<LoginBean>() {
             @Override
             public void Error(String string) {

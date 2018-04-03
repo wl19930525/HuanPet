@@ -4,6 +4,7 @@ import android.util.Log;
 
 import com.huanpet.huanpet.Model.HttpModel;
 import com.huanpet.huanpet.Model.ModelInf;
+import com.huanpet.huanpet.bean.DetailsBase;
 import com.huanpet.huanpet.presenter.contract.Contract;
 import com.huanpet.huanpet.untils.CallBackListener;
 
@@ -14,24 +15,25 @@ import com.huanpet.huanpet.untils.CallBackListener;
  */
 
 public class DatailsPresenter {
-    private Contract.ViewInf viewInf;
+    private Contract.DetailsView viewInf;
     private ModelInf modelInf;
 
-    public DatailsPresenter(Contract.ViewInf viewInf) {
+    public DatailsPresenter(Contract.DetailsView viewInf) {
         this.viewInf = viewInf;
         this.modelInf=new HttpModel();
     }
     public void sendData(String url,String cjon){
-        modelInf.Regist(url, cjon, new CallBackListener<String>() {
+        modelInf.Regist(url, cjon, new CallBackListener<DetailsBase>() {
             @Override
             public void Error(String string) {
                 Log.e("datails",string);
             }
 
             @Override
-            public void Success(String s) {
-               viewInf.UpdataUi(s);
-               Log.e("datails",s);
+            public void Success(DetailsBase s) {
+                Log.e("数据",s.toString());
+                DetailsBase.DescBean desc = s.getDesc();
+                viewInf.UpdataUi(desc);
             }
         });
     }

@@ -69,12 +69,12 @@ public class HttpUntils implements IoHttp{
 
     @Override
 
-    public <T> void post(String url, String string,final CallBackListener<T> callback) {
+    public <T> void post(String url, String string, final CallBackListener<T> callback) {
 
         FormBody.Builder body = new FormBody.Builder();
         body.add("data",string);
 
-        Request request = new Request.Builder().url(url).post(body.build()).build();
+        final Request request = new Request.Builder().url(url).post(body.build()).build();
 
         okHttpClient.newCall(request).enqueue(new Callback() {
             @Override
@@ -88,15 +88,11 @@ public class HttpUntils implements IoHttp{
                 String result = response.body().string();
                 Gson gson = new Gson();
 
-
-
                 Type[] tt =   callback.getClass().getGenericInterfaces();
-
                 Type[] tp =   ((ParameterizedType)tt[0]).getActualTypeArguments();
                 Type t = tp[0];
-
                 T tr =  gson.fromJson(result,t);
-
+                Log.e("数据",result);
                 callback.Success(tr);
 
             }

@@ -51,7 +51,8 @@
         <activity android:name=".view.activity.pet.ImmuneConditionActivity"/>
         <activity android:name=".view.activity.MobileActivity"/>
         <activity android:name=".screen.ScreenActivity"/>
-        <activity android:name=".view.activity.DtailsActivity"/>
+        <activity android:name=".view.activity.DtailsActivity">
+        </activity>
         <activity android:name=".view.activity.OrientateActivity" />
         <activity android:name=".view.activity.loginregist.PartyLoginActivity"/>
         <meta-data

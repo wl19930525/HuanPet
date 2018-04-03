@@ -348,6 +348,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         recy.setLayoutManager(new LinearLayoutManager(MainActivity.this));
         HomeListAdapter adapter = new HomeListAdapter(list, MainActivity.this);
         recy.setAdapter(adapter);
+        //Home数据的监听
+        initOnClick(list,adapter);
+    }
+
+    private void initOnClick(final List<HomeBase.DescBean> list, HomeListAdapter adaper) {
+        adaper.setOnClickListener(new HomeListAdapter.OnClick() {
+            @Override
+            public void onClick(int position) {
+                HomeBase.DescBean descBean = list.get(0);
+                Intent intent=new Intent(MainActivity.this,DtailsActivity.class);
+                intent.putExtra("UserId",descBean.getUsersId());
+                startActivity(intent);
+            }
+
+            @Override
+            public void onLongClick(int position) {
+
+            }
+        });
+
     }
 
 

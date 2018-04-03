@@ -20,10 +20,9 @@ public class HttpModel implements ModelInf{
     }
 
     @Override
-
-    public <T> void Regist(String string, String stringjson, CallBackListener<T> callBackListener) {
+    public <T> void Regist(java.lang.String string, java.lang.String stringjson, CallBackListener<T> callBackListener) {
         HttpUntils.getInstance().post(string, stringjson, callBackListener);
-
     }
+
 
 }
