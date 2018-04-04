@@ -59,6 +59,14 @@
             android:value="6c5df883e927ab4d7c52cec469139cfc">
             //开发者申请的key
         </meta-data>
+        <provider
+            android:authorities="com.gyq.cameraalbumtest.fileprovider"
+            android:name="android.support.v4.content.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"/>
+        </provider>
 
     </application>
 

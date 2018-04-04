@@ -69,7 +69,7 @@ public class PersonalActivity extends BaseActivity implements View.OnClickListen
     }
 
     public void initDialog() {
-        dialog = new Dialog(this, R.style.ActionSheetDialogStyle);
+        dialog = new Dialog(this, R.style.dialog);
         inflate = LayoutInflater.from(this).inflate(R.layout.personal_anim_dialog_layout, null);
         choosePhoto = inflate.findViewById(R.id.Photo_album);
         takePhoto = inflate.findViewById(R.id.Taking_pictures);
