@@ -141,12 +141,8 @@
         android:visibility="visible"
         android:layout_width="match_parent"
         android:orientation="vertical"
-        android:background="#F6F6F6"
+        android:background="#F9F9F9"
         android:layout_height="match_parent">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="li二狗"/>
         <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -157,17 +153,18 @@
     </LinearLayout>
     <FrameLayout
         android:id="@+id/nearpet_frame"
-        android:visibility="visible"
+        android:visibility="gone"
         android:background="#7f7f7f"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
+
         <android.support.v7.widget.RecyclerView
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#ffffff"
-            android:id="@+id/nearpet_popu"></android.support.v7.widget.RecyclerView>
+            android:id="@+id/nearpet_popu" />
     </FrameLayout>
 
 

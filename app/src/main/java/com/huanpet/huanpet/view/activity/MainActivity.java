@@ -289,7 +289,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     isBool = true;
                 }
                 break;
-            case R.id.screen_linear:
+            case R.id.screentext_main:
                 if (isBool) {
                     linear_main.setVisibility(View.GONE);
                     screen_main.setVisibility(View.VISIBLE);
@@ -341,19 +341,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void upDataHomeUi(final List<HomeBase.DescBean> list) {
-        this.runOnUiThread(new Runnable() {
-            private HomeListAdapter adapter;
-            @Override
-            public void run() {
+
                 recy.setLayoutManager(new LinearLayoutManager(MainActivity.this));
                 HomeListAdapter adapter = new HomeListAdapter(list, MainActivity.this);
                 recy.setAdapter(adapter);
                 //Home数据的监听
                 initOnClick(list,adapter);
-            }
-        });
-
-
     }
 
     private void initOnClick(final List<HomeBase.DescBean> list, HomeListAdapter adaper) {
