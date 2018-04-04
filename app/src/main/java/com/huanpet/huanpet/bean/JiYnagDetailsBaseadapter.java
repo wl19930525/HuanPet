@@ -1,12 +1,14 @@
 package com.huanpet.huanpet.bean;
 
+import java.io.Serializable;
+
 /**
  * Created by mMaster
  * on 2018/4/3.
  * at 北京
  */
 
-public class JiYnagDetailsBaseadapter {
+public class JiYnagDetailsBaseadapter implements Serializable{
     private String typeName;
     private String image;
     private String severiceName;

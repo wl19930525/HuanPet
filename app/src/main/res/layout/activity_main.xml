@@ -138,20 +138,21 @@
     </LinearLayout>
     <LinearLayout
         android:id="@+id/linear_main"
-        android:visibility="gone"
+        android:visibility="visible"
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:background="#F6F6F6"
         android:layout_height="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="li二狗"/>
         <android.support.v7.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:id="@+id/home_recy_main">
-
         </android.support.v7.widget.RecyclerView>
-
-
 
     </LinearLayout>
     <FrameLayout

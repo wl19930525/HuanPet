@@ -92,7 +92,6 @@ public class HttpUntils implements IoHttp{
                 Type[] tp =   ((ParameterizedType)tt[0]).getActualTypeArguments();
                 Type t = tp[0];
                 T tr =  gson.fromJson(result,t);
-                Log.e("数据",result);
                 callback.Success(tr);
 
             }

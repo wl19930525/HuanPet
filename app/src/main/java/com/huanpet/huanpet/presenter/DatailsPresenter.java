@@ -31,7 +31,7 @@ public class DatailsPresenter {
 
             @Override
             public void Success(DetailsBase s) {
-                Log.e("数据",s.toString());
+                //Log.e("数据",s.toString());
                 DetailsBase.DescBean desc = s.getDesc();
                 viewInf.UpdataUi(desc);
             }

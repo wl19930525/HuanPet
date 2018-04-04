@@ -88,6 +88,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ActionBarDrawerToggle mDrawerToggle;
     private DrawerLayout mDrawerLayout;
     private Boolean isBool = true;
+    private RecyclerView recy;
     private List<String> userList1 = new ArrayList<>();
     private List<String> userList2 = new ArrayList<>();
     private String url="http://123.56.150.230:8885/dog_family/users/getUsersInfoByVO.jhtml";
@@ -117,7 +118,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initView() {
-
+        recy=findViewById(R.id.home_recy_main);
         image_personal = (ImageView) findViewById(R.id.image_personal);
         image_personal.setOnClickListener(this);
         image_orientate = (ImageView) findViewById(R.id.image_orientate);
@@ -239,9 +240,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-
             case R.id.neartext_main:
-                Log.e("看看监听", "OK");
                 if (isBool) {
                     linear_main.setVisibility(View.GONE);
                     nearpet_frame.setVisibility(View.VISIBLE);
@@ -332,8 +331,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.set_linear:
                 break;
-
-
         }
     }
 
@@ -343,13 +340,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
-    public void upDataHomeUi(List<HomeBase.DescBean> list) {
-        RecyclerView recy=findViewById(R.id.home_recy_main);
-        recy.setLayoutManager(new LinearLayoutManager(MainActivity.this));
-        HomeListAdapter adapter = new HomeListAdapter(list, MainActivity.this);
-        recy.setAdapter(adapter);
-        //Home数据的监听
-        initOnClick(list,adapter);
+    public void upDataHomeUi(final List<HomeBase.DescBean> list) {
+        this.runOnUiThread(new Runnable() {
+            private HomeListAdapter adapter;
+            @Override
+            public void run() {
+                recy.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+                HomeListAdapter adapter = new HomeListAdapter(list, MainActivity.this);
+                recy.setAdapter(adapter);
+                //Home数据的监听
+                initOnClick(list,adapter);
+            }
+        });
+
+
     }
 
     private void initOnClick(final List<HomeBase.DescBean> list, HomeListAdapter adaper) {
