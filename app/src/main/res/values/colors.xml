@@ -8,4 +8,7 @@
     <color name="colorbtn_mobile">#ffd600</color>
     <color name="black">#080808</color>
     <color name="gray">#73726e</color>
+
+    <!--透明-->
+    <color name="transparent">#00000000</color>
 </resources>

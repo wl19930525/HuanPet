@@ -78,6 +78,17 @@
         </meta-data>
 
         <activity android:name=".view.activity.OrientateActivity"></activity>
+            <!--相机图库-->
+        <provider
+            android:authorities="com.gyq.cameraalbumtest.fileprovider"
+            android:name="android.support.v4.content.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"/>
+        </provider>
+
+
     </application>
 
 </manifest>
