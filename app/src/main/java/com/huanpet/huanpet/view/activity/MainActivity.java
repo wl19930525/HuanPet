@@ -9,7 +9,6 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -19,29 +18,28 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.huanpet.huanpet.R;
+import com.huanpet.huanpet.bean.HomeBase;
+import com.huanpet.huanpet.presenter.Presenter;
+import com.huanpet.huanpet.presenter.contract.Contract;
 import com.huanpet.huanpet.screen.ScreenActivity;
+
 import com.huanpet.huanpet.untils.CJSON;
-import com.huanpet.huanpet.untils.Md5Encrypt;
 import com.huanpet.huanpet.view.activity.loginregist.LoginActivity;
+import com.huanpet.huanpet.view.adapter.HomeListAdapter;
+
+import com.huanpet.huanpet.view.activity.pet.MyPetActivity;
+
 import com.huanpet.huanpet.view.adapter.MyNearPetAdapter;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.FormBody;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener,Contract.ViewInf {
     private ImageView image_personal;
     private ImageView image_orientate;
     private LinearLayout search;
@@ -92,41 +90,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Boolean isBool = true;
     private List<String> userList1 = new ArrayList<>();
     private List<String> userList2 = new ArrayList<>();
-
+    private String url="http://123.56.150.230:8885/dog_family/users/getUsersInfoByVO.jhtml";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        initDrawerLayout();
+        new Presenter(this).doSumshing2(url,getCJson());
         initView();
+        initDrawerLayout();
         initCeMenu();
-        initData();
+
+
     }
+    public String getCJson(){
+        Map<String,Object> map=new HashMap<>();
+        map.put("beginIndex","0");
+        map.put("coordX","40.116384");
+        map.put("coordY","116.250374");
+        map.put("endIndex","10");
+        map.put("orderBy","distance asc");
+        String s = CJSON.toJSONMap(map);
+        return s;
 
-    private void initData() {
-        Map<String, Object> param = new HashMap<>();
-        param.put("beginIndex", "0");
-        param.put("coordX", "40.116384");
-        param.put("coordY", "116.250374");
-        param.put("endIndex", "10");
-        param.put("orderBy", "distance asc");
-        String jsonMap = CJSON.toJSONMap(param);
-        OkHttpClient okHttpClient = new OkHttpClient();
-        FormBody formBody = new FormBody.Builder().add("data",jsonMap).build();
-        Request request = new Request.Builder().url("http://123.56.150.230:8885/dog_family/user/register.jhtml").post(formBody).build();
-        okHttpClient.newCall(request).enqueue(new Callback() {
-            @Override
-            public void onFailure(Call call, IOException e) {
-                Log.e("_____----————",e.getMessage());
-            }
 
-            @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                String string = response.body().string();
-                Log.e("_____----——————",string);
-            }
-        });
     }
 
     private void initView() {
@@ -253,7 +240,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
 
-            case R.id.near_linear:
+            case R.id.neartext_main:
                 Log.e("看看监听", "OK");
                 if (isBool) {
                     linear_main.setVisibility(View.GONE);
@@ -278,7 +265,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     isBool = true;
                 }
                 break;
-            case R.id.pet_linear2:
+            case R.id.pwttext_main:
                 if (isBool) {
                     linear_main.setVisibility(View.GONE);
                     nearpet_frame.setVisibility(View.VISIBLE);
@@ -318,6 +305,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     isBool = true;
                 }
                 break;
+
             case R.id.selectcity_text_main:
                 Intent intent1 = new Intent(MainActivity.this, ScreenActivity.class);
                 startActivity(intent1);
@@ -335,6 +323,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.information_linear:
                 break;
             case R.id.pet_linear:
+                Intent intent3 = new Intent(MainActivity.this, MyPetActivity.class);
+                startActivity(intent3);
                 break;
             case R.id.orderfrom_linear:
                 break;
@@ -346,5 +336,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         }
     }
+
+    @Override
+    public <T> void UpdataUi(T t) {
+
+    }
+
+    @Override
+    public void upDataHomeUi(List<HomeBase.DescBean> list) {
+        RecyclerView recy=findViewById(R.id.home_recy_main);
+        recy.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+        HomeListAdapter adapter = new HomeListAdapter(list, MainActivity.this);
+        recy.setAdapter(adapter);
+    }
+
 
 }

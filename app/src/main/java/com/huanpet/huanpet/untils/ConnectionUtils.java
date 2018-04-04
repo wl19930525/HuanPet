@@ -1,25 +1,22 @@
+
+package com.huanpet.huanpet.untils;
+
+
+
 /**
  * @描述		:	
  * @作�??	    :Android - csx
  * @创建日期  :2016�?3�?14�? 下午3:01:54  
  *
  */
-package com.huanpet.huanpet.untils;
 
-
-
+import android.net.ConnectivityManager;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 
-/**
- * @描述 :网络判断工具
- * @作�?? :Android - csx
- * @创建日期 :2016�?3�?14�? 下午3:01:54
- * 
- */
 public class ConnectionUtils {
 
 	// 获取网络管理信息
@@ -31,13 +28,13 @@ public class ConnectionUtils {
 	public static final String IP = "ip";
 
 	/**
-	 * 
+	 *
 	 * @描述 :是否连接网络
 	 * @方法名称 :isConnNetWork----&gt;ConnectionUtils.java
 	 * @作�?? :Android - csx
 	 * @创建日期 :2016�?3�?14�? 下午3:03:02
 	 * @return
-	 * 
+	 *
 	 */
 	@SuppressWarnings("static-access")
 	public static boolean isConnNetWork(Context context) {
@@ -90,6 +87,7 @@ public class ConnectionUtils {
 		return (i & 0xFF) + "." + ((i >> 8) & 0xFF) + "." + ((i >> 16) & 0xFF)
 				+ "." + (i >> 24 & 0xFF);
 	}
+
 
 
 }

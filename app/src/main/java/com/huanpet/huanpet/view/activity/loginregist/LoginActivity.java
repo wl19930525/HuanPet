@@ -10,6 +10,17 @@ import android.widget.TextView;
 
 import com.huanpet.huanpet.R;
 import com.huanpet.huanpet.base.BaseActivity;
+import com.huanpet.huanpet.untils.CJSON;
+import com.huanpet.huanpet.untils.CallBackListener;
+import com.huanpet.huanpet.untils.HttpUntils;
+import com.huanpet.huanpet.view.activity.loginregist.loginbean.EventBusBean.EventBusBean;
+import com.huanpet.huanpet.view.activity.loginregist.loginbean.LoginBean;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
+
+import java.util.HashMap;
 
 
 public class LoginActivity extends BaseActivity implements View.OnClickListener {
@@ -28,6 +39,10 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     private TextView textView2;
     private TextView textView3;
 
+
+    private String userName;
+    private String passWord;
+
     @Override
     protected int initgetId() {
         return R.layout.activity_login;
@@ -38,9 +53,11 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
 
     }
 
+
     @Override
     protected void initView() {
-       setlinearBase(false);
+
+        setlinearBase(false);
         imageview_comeback = findViewById(R.id.imageview_comeback);
         imageview_comeback.setOnClickListener(this);
         button_regist = findViewById(R.id.button_regist);
@@ -80,6 +97,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                 break;
             //登录监听
             case R.id.button_login:
+                getLogin();
                 break;
             //忘记密码
             case R.id.Forgetpassword:
@@ -96,5 +114,63 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         }
     }
 
+    private void getLogin() {
+        userName = Username.getText().toString().trim();
+        passWord = Password.getText().toString().trim();
 
+        String url = "http://123.56.150.230:8885/dog_family/user/login.jhtml";
+        HashMap<String, Object> map = new HashMap<>();
+        map.put("userPhone", userName);
+        map.put("password", passWord);
+        String s = CJSON.toJSONMap(map);
+        HttpUntils.getInstance().post(url, s, new CallBackListener<LoginBean>() {
+            @Override
+            public void Error(String string) {
+
+            }
+
+            @Override
+            public void Success(LoginBean loginBean) {
+
+            }
+        });
+    }
+
+    /*private boolean isUserName(String User){
+        if (!User.equals(userName)){
+            Toast.makeText(this, "账号错误请重新输入", Toast.LENGTH_SHORT).show();
+            return false;
+        }else {
+            return true;
+        }
+    }
+    private boolean isPassWord(String pass){
+        if (!pass.equals(passWord)){
+            Toast.makeText(this, "密码错误请重新输入", Toast.LENGTH_SHORT).show();
+            return false;
+        }else {
+            return true;
+        }
+    }*/
+
+
+    @Subscribe(sticky = true,threadMode = ThreadMode.MAIN)
+    public void OnEvents(EventBusBean eventBusBean) {
+        Username.setText(eventBusBean.getUsername());
+        Password.setText(eventBusBean.getPassword());
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if (EventBus.getDefault().isRegistered(this)) {
+            EventBus.getDefault().unregister(this);
+        }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        EventBus.getDefault().register(this);
+    }
 }

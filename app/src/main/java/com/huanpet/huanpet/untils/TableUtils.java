@@ -1,3 +1,5 @@
+
+
 /**   
  * @描述						:	
  * @文件名称					:	TableUtils.java   
@@ -6,17 +8,18 @@
  * @版本						:	v1.0
  * @创建日期					:	2016�??3�??14�?? 
  */
+
 package com.huanpet.huanpet.untils;
 
 import android.provider.BaseColumns;
 
 /**
- * @描述 : �??有数据库本地�??
- * @类名 : TableUtils
- * @作�?? : Android - yhq
- * @版本 : v1.0
- * @日期 : 2016�??3�??14�??
+
+ * Created by mMaster
+ * on 2018/3/29.
+ * at 北京
  */
+
 public class TableUtils {
 
 	/**
@@ -352,3 +355,4 @@ public class TableUtils {
 	}
 
 }
+

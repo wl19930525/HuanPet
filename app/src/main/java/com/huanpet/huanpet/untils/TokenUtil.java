@@ -1,10 +1,7 @@
-/**
- * @描述		:	
- * @作�??	    :Android - csx
- * @创建日期  :2016�?3�?23�? 下午7:12:37  
- *
- */
+
 package com.huanpet.huanpet.untils;
+
+import android.content.Context;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -57,3 +54,4 @@ public class TokenUtil {
 	}
 
 }
+

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f6f6f6"
+    tools:context="com.huanpet.huanpet.view.activity.DtailsActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                android:background="#ffffff">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp">
+
+                    <ImageView
+                        android:id="@+id/imagebigtop_details"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:background="@drawable/empty_star" />
+                    <com.huanpet.huanpet.untils.CircleImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:id="@+id/imageOver_details"
+                        android:background="@drawable/icon_detail_evaluate_half" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/imagebigtop_details"
+                        android:layout_marginLeft="21dp"
+                        android:layout_marginStart="21dp"
+                        android:layout_toEndOf="@+id/imageOver_details"
+                        android:layout_toRightOf="@+id/imageOver_details"
+                        android:text="李丽丽"
+                        android:id="@+id/textName_details" />
+
+                    <RatingBar
+                        android:id="@+id/rating_details"
+                        style="@style/foodRatingBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignLeft="@+id/textName_details"
+                        android:layout_alignStart="@+id/textName_details"
+                        android:layout_below="@+id/textName_details"
+                        android:clickable="false"
+                        android:numStars="5"
+                        android:progressTint="#FFD500"
+                        android:rating="5" />
+                </RelativeLayout>
+            </FrameLayout>
+            <LinearLayout
+                android:layout_marginTop="5dp"
+                android:background="#ffffff"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:background="@mipmap/evaluate"
+                    android:id="@+id/imagepinglun_details"
+                    android:layout_height="30dp" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="ddddddddd"
+                    android:id="@+id/textpinlun_details"
+                    android:layout_marginLeft="5dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="ppp"
+                    android:gravity="center"
+                    android:id="@+id/textpinglunintent_details"/>
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="寄养服务"
+                android:gravity="center_vertical"/>
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:background="#ffffff"
+                android:id="@+id/recytop_details"
+                android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="其它服务"
+                android:gravity="center_vertical"/>
+            <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/recybottom_details"></android.support.v7.widget.RecyclerView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="家庭地址"
+                android:gravity="center_vertical"/>
+            <LinearLayout
+                android:layout_marginTop="5dp"
+                android:background="#ffffff"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="30dp"
+                    android:background="@mipmap/evaluate"
+                    android:id="@+id/imagedizhi_details"
+                    android:layout_height="30dp" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="北京市昌平区沙河"
+                    android:id="@+id/textdizhi_details"
+                    android:layout_marginLeft="5dp"/>
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="寄养家庭简介"
+                android:gravity="center_vertical"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="李丽丽了"
+                android:id="@+id/textjieji_details"
+                android:background="#ffffff"
+                android:gravity="center_vertical"/>
+            <LinearLayout
+                android:layout_marginTop="5dp"
+                android:background="#ffffff"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_height="match_parent">
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:background="@mipmap/evaluate"
+                        android:layout_height="30dp" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="联系Ta"/>
+                </LinearLayout>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="预约寄养"
+                    android:background="#FF9A00"
+                    android:gravity="center"
+                    android:id="@+id/buttonjiyang_details"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
+
+

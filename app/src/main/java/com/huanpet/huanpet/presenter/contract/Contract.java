@@ -1,6 +1,9 @@
 package com.huanpet.huanpet.presenter.contract;
 
-import java.util.Map;
+import com.huanpet.huanpet.bean.HomeBase;
+
+import java.util.List;
+
 
 /**
  * Created by 执笔画商
@@ -12,8 +15,15 @@ public interface Contract {
 
     public interface ViewInf{
         <T>void UpdataUi(T t);
+        void upDataHomeUi(List<HomeBase.DescBean> list);
+
     }
     public interface PresenterInf{
-        void doSumshing(String url, Map<String,String> hendmap, Map<String,String> bodymap);
+
+       public void doSumshing(String url, String string);
+        public void doSumshing2(String url,String stringJson);
+
+
     }
+
 }

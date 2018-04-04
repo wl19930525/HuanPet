@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.huanpet.huanpet">
+
 
     <uses-permission android:name="android.permission.INTERNET" />
     <!-- 允许程序设置内置sd卡的写权限 -->
@@ -31,34 +33,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.activity.loginregist.LoginActivity" />
-        <activity android:name=".view.activity.YindaoyeActivity" />
-        <activity
-            android:name="com.umeng.qq.tencent.AuthActivity"
-            android:launchMode="singleTask"
-            android:noHistory="true">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
 
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data android:scheme="tencent100424468" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name="com.umeng.qq.tencent.AssistActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-
-        <meta-data
-            android:name="UMENG_APPKEY"
-            android:value="561cae6ae0f55abd990035bf" />
-
-        <activity android:name=".view.activity.loginregist.RegistActivity" />
-        <activity android:name=".view.activity.PersonalActivity" />
-        <activity android:name=".view.activity.pet.Add_PetsActivity" />
         <activity android:name=".view.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -66,28 +41,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.activity.MobileActivity" />
-        <activity android:name=".view.activity.pet.PetTypeActivity"></activity>
-        <activity android:name=".screen.ScreenActivity"></activity>
-        <activity android:name=".view.activity.pet.ImmuneConditionActivity"></activity>
-
+        <activity android:name=".view.activity.loginregist.LoginActivity" />
+        <activity android:name=".view.activity.YindaoyeActivity" />
+        <activity android:name=".view.activity.loginregist.RegistActivity" />
+        <activity android:name=".view.activity.PersonalActivity" />
+        <activity android:name=".view.activity.pet.Add_PetsActivity" />
+        <activity android:name=".view.activity.pet.MyPetActivity" />
+        <activity android:name=".view.activity.pet.PetTypeActivity"/>
+        <activity android:name=".view.activity.pet.ImmuneConditionActivity"/>
+        <activity android:name=".view.activity.MobileActivity"/>
+        <activity android:name=".screen.ScreenActivity"/>
+        <activity android:name=".view.activity.DtailsActivity"/>
+        <activity android:name=".view.activity.OrientateActivity" />
+        <activity android:name=".view.activity.loginregist.PartyLoginActivity"/>
         <meta-data
             android:name="com.amap.api.v2.apikey"
             android:value="6c5df883e927ab4d7c52cec469139cfc">
             //开发者申请的key
         </meta-data>
-
-        <activity android:name=".view.activity.OrientateActivity"></activity>
-            <!--相机图库-->
-        <provider
-            android:authorities="com.gyq.cameraalbumtest.fileprovider"
-            android:name="android.support.v4.content.FileProvider"
-            android:exported="false"
-            android:grantUriPermissions="true">
-            <meta-data android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths"/>
-        </provider>
-
 
     </application>
 
